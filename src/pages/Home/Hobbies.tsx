@@ -1,4 +1,4 @@
-import { Cpu, Gamepad2, Mountain, Music } from 'lucide-react';
+import { Bot, Cpu, Gamepad2, Mountain, Music } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface IHobby {
@@ -28,6 +28,12 @@ const hobbies: IHobby[] = [
     label: 'Gaming',
     description: 'Competitive games and the thrill of a close match.',
     icon: Gamepad2,
+  },
+  {
+    label: 'Local AI Models',
+    description:
+      'Exploring local models for agentic coding and tuning them for faster code generation — still searching for the right one.',
+    icon: Bot,
   },
 ];
 
