@@ -130,7 +130,7 @@ const DotWaves = () => {
           const py = baseY + offsetY[index];
 
           ctx.beginPath();
-          ctx.arc(px, py, 1.3, 0, Math.PI * 2);
+          ctx.arc(px, py, 1.8, 0, Math.PI * 2);
           ctx.fill();
         }
       }
