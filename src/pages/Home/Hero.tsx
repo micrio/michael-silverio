@@ -28,7 +28,7 @@ const stats = [
 const Hero = () => {
   return (
     <section className="flex min-h-[calc(100svh-4.25rem)] items-center pb-10 pt-2 md:pt-4">
-      <div className="grid w-full gap-10 lg:grid-cols-[60%_40%] lg:items-center lg:gap-16">
+      <div className="grid w-full gap-10 lg:grid-cols-[68%_32%] lg:items-center lg:gap-16">
         <div className="flex flex-col items-start">
           <h1 className="text-left text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
             Michael Silverio
