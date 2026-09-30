@@ -31,6 +31,66 @@ const localImages = (folder: string, count: number): string[] =>
 
 export const projects: IProject[] = [
   {
+    slug: 'market-sentinel',
+    title: 'Market Sentinel',
+    category: 'web',
+    repoUrl: 'https://github.com/micrio/market-sentinel',
+    shortDescription:
+      'A stock watchlist with live quotes, news-driven sentiment analysis, and multi-horizon projections. Add US tickers, watch the tape, and run a sentiment report backed by recent financial headlines.',
+    images: localImages('market_sentinel', 6),
+    badges: ['Rails', 'React', 'Inertia.js', 'TypeScript', 'Tailwindcss', 'RubyLLM'],
+    overview:
+      'Market Sentinel is a stock watchlist that pairs live quotes with news-driven sentiment analysis. It uses no paid data APIs: quotes are cached server-side and sentiment is scored from public RSS headlines, with multi-horizon projections and rationale. Runs are persisted per user and symbol, and execute in the background so you can keep navigating. Educational tool only \u2014 not financial advice.',
+    features: [
+      {
+        label: 'Watchlist',
+        text: 'add US tickers with autocomplete from a bundled 11k+ symbol directory (no API calls), grid or list layout, and sorting by A\u2013Z, Bullish, Gainers or Losers.',
+      },
+      {
+        label: 'Live Quotes',
+        text: 'price and % change with a 30-minute server-side cache and a relative \u201cupdated 3m ago\u201d indicator.',
+      },
+      {
+        label: 'Sentiment Badge',
+        text: 'at-a-glance bullish/bearish/neutral score (e.g. Bullish 72%) plus week/month/year horizon chips.',
+      },
+      {
+        label: 'Ticker Detail',
+        text: 'latest report and a history of previous runs, click a row to view any past report; Yahoo Finance links out for charts, financials, holders and more.',
+      },
+      {
+        label: 'Sentiment Analysis',
+        text: 'crawls recent headlines, scores sentiment (DeepSeek via RubyLLM, or a keyword fallback) and projects This Week / Next Month / Next Year with probabilities, biases and rationale.',
+      },
+      {
+        label: 'Background Jobs',
+        text: 'Solid Queue runs the analysis with live progress (queued \u2192 crawling \u2192 scoring \u2192 saving) and polling from the UI.',
+      },
+      {
+        label: 'Reuse & Cooldown',
+        text: 'reuses in-flight (<15m), completed (<30m) or recently failed (<60s) runs to save crawls and LLM calls.',
+      },
+      {
+        label: 'Auth',
+        text: 'Devise authentication; watchlists and analyses are scoped per user.',
+      },
+    ],
+    techStack: [
+      { name: 'Rails 7.2', category: 'Framework' },
+      { name: 'Inertia.js', category: 'Adapter' },
+      { name: 'React 19', category: 'Frontend' },
+      { name: 'TypeScript', category: 'Language' },
+      { name: 'Tailwind CSS v4', category: 'Styling' },
+      { name: 'SQLite', category: 'Database' },
+      { name: 'Solid Queue', category: 'Background jobs' },
+      { name: 'Devise', category: 'Authentication' },
+      { name: 'RubyLLM (DeepSeek)', category: 'Sentiment analysis' },
+      { name: 'Nokogiri', category: 'RSS parsing' },
+      { name: 'Recharts', category: 'Charts' },
+      { name: 'Lucide', category: 'Icons' },
+    ],
+  },
+  {
     slug: 'speedfolio',
     title: 'Speedfolio',
     category: 'web',
