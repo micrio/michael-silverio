@@ -1,13 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 
 interface IYearsCounter {
-  startYear: number;
+  startYear?: number;
+  value?: number;
   className?: string;
   suffix?: string;
 }
 
-const YearsCounter = ({ startYear, className, suffix = '+' }: IYearsCounter) => {
-  const years = Math.max(0, new Date().getFullYear() - startYear);
+const YearsCounter = ({ startYear, value, className, suffix = '+' }: IYearsCounter) => {
+  const target =
+    typeof value === 'number'
+      ? value
+      : Math.max(0, new Date().getFullYear() - (startYear ?? 0));
   const [count, setCount] = useState(0);
   const frame = useRef<number | null>(null);
 
@@ -16,8 +20,8 @@ const YearsCounter = ({ startYear, className, suffix = '+' }: IYearsCounter) => 
       '(prefers-reduced-motion: reduce)'
     ).matches;
 
-    if (prefersReducedMotion || years === 0) {
-      setCount(years);
+    if (prefersReducedMotion || target === 0) {
+      setCount(target);
       return;
     }
 
@@ -26,7 +30,7 @@ const YearsCounter = ({ startYear, className, suffix = '+' }: IYearsCounter) => 
 
     const tick = (now: number) => {
       const progress = Math.min((now - start) / duration, 1);
-      setCount(Math.round(progress * years));
+      setCount(Math.round(progress * target));
 
       if (progress < 1) {
         frame.current = requestAnimationFrame(tick);
@@ -40,7 +44,7 @@ const YearsCounter = ({ startYear, className, suffix = '+' }: IYearsCounter) => 
         cancelAnimationFrame(frame.current);
       }
     };
-  }, [years]);
+  }, [target]);
 
   return (
     <span className={className}>

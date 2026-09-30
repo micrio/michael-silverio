@@ -4,6 +4,8 @@ const WEB_DEV_START_YEAR = 2020;
 
 const stats = [
   { startYear: WEB_DEV_START_YEAR, label: 'years building for the web' },
+  { value: 10, label: 'production apps contributed to' },
+  { value: 40, label: 'features shipped to production' },
 ];
 
 const Hero = () => {
@@ -23,13 +25,14 @@ const Hero = () => {
           agentic coding to get there quicker.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          {stats.map(({ startYear, label }) => (
+          {stats.map(({ startYear, value, label }) => (
             <div
               key={label}
               className="glass inline-flex items-center gap-3 rounded-2xl px-5 py-3"
             >
               <YearsCounter
                 startYear={startYear}
+                value={value}
                 className="text-3xl font-semibold text-slate-900 dark:text-white"
               />
               <span className="text-sm text-slate-600 dark:text-slate-400">
