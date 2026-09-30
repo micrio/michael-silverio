@@ -16,6 +16,7 @@ import Home from './pages/Home/Home';
 import ProductionApps from './pages/ProductionApps/ProductionApps';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
 import ShippedFeatures from './pages/ShippedFeatures/ShippedFeatures';
+import Contributions from './pages/Contributions/Contributions';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -44,6 +45,7 @@ function App() {
             <Route path="/projects/:slug" element={<ProjectDetail />} />
             <Route path="/production-apps" element={<ProductionApps />} />
             <Route path="/shipped-features" element={<ShippedFeatures />} />
+            <Route path="/contributions" element={<Contributions />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>

@@ -7,6 +7,15 @@ export interface IProductionApp {
   description: string;
   /** Only shipped features are counted — maintenance/other are excluded. */
   features: string[];
+  /** Maintenance, refactors, infra, and process work. Not counted as features. */
+  contributions: string[];
+}
+
+export interface IRoleContributions {
+  company: string;
+  period: string;
+  slug: string;
+  items: string[];
 }
 
 export const appSlug = (name: string) =>
@@ -22,8 +31,18 @@ export const productionApps: IProductionApp[] = experienceRoles.flatMap((role) =
     period: role.period,
     description: app.description,
     features: app.features,
+    contributions: app.contributions ?? [],
   }))
 );
+
+export const roleContributions: IRoleContributions[] = experienceRoles
+  .filter((role) => (role.contributions?.length ?? 0) > 0)
+  .map((role) => ({
+    company: role.company,
+    period: role.period,
+    slug: appSlug(role.company),
+    items: role.contributions ?? [],
+  }));
 
 export const shippedFeatures = productionApps.flatMap((app) =>
   app.features.map((feature) => ({
@@ -41,3 +60,7 @@ export const totalShippedFeatures = productionApps.reduce(
   (sum, app) => sum + app.features.length,
   0
 );
+
+export const totalContributions =
+  productionApps.reduce((sum, app) => sum + app.contributions.length, 0) +
+  roleContributions.reduce((sum, role) => sum + role.items.length, 0);

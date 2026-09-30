@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import YearsCounter from '../../components/YearsCounter/YearsCounter';
 import {
+  totalContributions,
   totalProductionApps,
   totalShippedFeatures,
 } from '../../data/production';
@@ -20,6 +21,11 @@ const stats = [
     value: totalShippedFeatures,
     label: 'features shipped to production',
     to: '/shipped-features',
+  },
+  {
+    value: totalContributions,
+    label: 'contributions to production',
+    to: '/contributions',
   },
 ];
 
