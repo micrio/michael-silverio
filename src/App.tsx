@@ -9,7 +9,6 @@ import {
 import './App.css';
 import Background from './components/Background/Background';
 import CursorGlow from './components/CursorGlow/CursorGlow';
-import MoreDots from './components/MoreDots/MoreDots';
 import SiteNav from './components/SiteNav/SiteNav';
 import Home from './pages/Home/Home';
 // import ThemeToggle from './pages/Home/ThemeToggle';
@@ -32,7 +31,6 @@ function App() {
       <div className="relative flex min-h-screen flex-col overflow-x-hidden">
         <Background />
         <CursorGlow />
-        <MoreDots />
         <header className="mx-auto flex w-full max-w-6xl flex-none items-center justify-end px-6 py-4 md:px-10">
           <SiteNav />
         </header>
