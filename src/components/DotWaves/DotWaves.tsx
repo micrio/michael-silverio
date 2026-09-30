@@ -1,8 +1,9 @@
 import { useEffect, useRef } from 'react';
 
 /**
- * Subtle flowing dot-wave field rendered on a canvas. Dots drift through
- * layered sine waves for a soft "vortex wave" motion behind the glass.
+ * Flowing dot-wave field rendered on a canvas. Each dot has velocity and a
+ * spring back to its wave position, so the pointer stirs them like grains of
+ * sand or particles in liquid — smooth inertia, no snapping.
  */
 const DotWaves = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -20,12 +21,33 @@ const DotWaves = () => {
 
     const dpr = window.devicePixelRatio || 1;
     const spacing = 36;
+    const radius = 150;
+    const repulse = 1.1;
+    const spring = 0.025;
+    const damping = 0.92;
+
     let width = 0;
     let height = 0;
+    let cols = 0;
+    let rows = 0;
+    let offsetX = new Float32Array(0);
+    let offsetY = new Float32Array(0);
+    let velocityX = new Float32Array(0);
+    let velocityY = new Float32Array(0);
     let raf = 0;
     let time = 0;
     let pointerX: number | null = null;
     let pointerY: number | null = null;
+
+    const buildGrid = () => {
+      cols = Math.ceil(width / spacing) + 2;
+      rows = Math.ceil(height / spacing) + 2;
+      const count = cols * rows;
+      offsetX = new Float32Array(count);
+      offsetY = new Float32Array(count);
+      velocityX = new Float32Array(count);
+      velocityY = new Float32Array(count);
+    };
 
     const onPointerMove = (event: MouseEvent) => {
       pointerX = event.clientX;
@@ -45,6 +67,7 @@ const DotWaves = () => {
       canvas.style.width = `${width}px`;
       canvas.style.height = `${height}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      buildGrid();
     };
 
     const draw = () => {
@@ -54,22 +77,40 @@ const DotWaves = () => {
       const dark = document.documentElement.classList.contains('dark');
       ctx.fillStyle = dark ? 'rgba(148, 163, 184, 0.26)' : 'rgba(51, 65, 85, 0.16)';
 
-      for (let y = 0; y <= height + spacing; y += spacing) {
-        for (let x = 0; x <= width + spacing; x += spacing) {
-          let px =
+      for (let row = 0; row < rows; row += 1) {
+        const y = row * spacing;
+
+        for (let col = 0; col < cols; col += 1) {
+          const x = col * spacing;
+          const index = row * cols + col;
+
+          const baseX =
             x + Math.sin(y * 0.008 + time) * 14 + Math.cos(x * 0.005 - time * 0.6) * 6;
-          let py =
+          const baseY =
             y + Math.cos(x * 0.008 + time * 0.9) * 14 + Math.sin(y * 0.005 + time * 0.7) * 6;
 
           if (pointerX !== null && pointerY !== null) {
-            const dx = px - pointerX;
-            const dy = py - pointerY;
+            const dx = baseX + offsetX[index] - pointerX;
+            const dy = baseY + offsetY[index] - pointerY;
             const dist = Math.hypot(dx, dy) || 1;
-            const radius = 180;
-            const force = Math.max(0, 1 - dist / radius);
-            px += (dx / dist) * force * 34;
-            py += (dy / dist) * force * 34;
+
+            if (dist < radius) {
+              const strength = (1 - dist / radius) * repulse;
+              velocityX[index] += (dx / dist) * strength;
+              velocityY[index] += (dy / dist) * strength;
+            }
           }
+
+          // Spring back toward the wave position, with damping for fluid inertia.
+          velocityX[index] += -offsetX[index] * spring;
+          velocityY[index] += -offsetY[index] * spring;
+          velocityX[index] *= damping;
+          velocityY[index] *= damping;
+          offsetX[index] += velocityX[index];
+          offsetY[index] += velocityY[index];
+
+          const px = baseX + offsetX[index];
+          const py = baseY + offsetY[index];
 
           ctx.beginPath();
           ctx.arc(px, py, 1.4, 0, Math.PI * 2);
