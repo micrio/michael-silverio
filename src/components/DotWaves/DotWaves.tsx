@@ -35,8 +35,9 @@ const DotWaves = () => {
     let offsetY = new Float32Array(0);
     let velocityX = new Float32Array(0);
     let velocityY = new Float32Array(0);
+    let restX = new Float32Array(0);
+    let restY = new Float32Array(0);
     let raf = 0;
-    let time = 0;
     let pointerX: number | null = null;
     let pointerY: number | null = null;
     let pointerTargetX: number | null = null;
@@ -50,6 +51,15 @@ const DotWaves = () => {
       offsetY = new Float32Array(count);
       velocityX = new Float32Array(count);
       velocityY = new Float32Array(count);
+      restX = new Float32Array(count);
+      restY = new Float32Array(count);
+
+      // Static, organic jitter so the grid is not perfectly straight but also
+      // does not drift.
+      for (let i = 0; i < count; i += 1) {
+        restX[i] = Math.random() * 16 - 8;
+        restY[i] = Math.random() * 16 - 8;
+      }
     };
 
     const onPointerMove = (event: MouseEvent) => {
@@ -79,7 +89,6 @@ const DotWaves = () => {
     };
 
     const draw = () => {
-      time += 0.0025;
       ctx.clearRect(0, 0, width, height);
 
       // Ease the pointer toward its target so cursor motion feels like it
@@ -104,10 +113,8 @@ const DotWaves = () => {
           const x = col * spacing;
           const index = row * cols + col;
 
-          const baseX =
-            x + Math.sin(y * 0.008 + time) * 14 + Math.cos(x * 0.005 - time * 0.6) * 6;
-          const baseY =
-            y + Math.cos(x * 0.008 + time * 0.9) * 14 + Math.sin(y * 0.005 + time * 0.7) * 6;
+          const baseX = x + restX[index];
+          const baseY = y + restY[index];
 
           if (pointerX !== null && pointerY !== null) {
             const dx = baseX + offsetX[index] - pointerX;
