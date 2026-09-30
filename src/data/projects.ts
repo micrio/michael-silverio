@@ -106,10 +106,6 @@ export const projects: IProject[] = [
       'A Google Drive clone that lets users manage their files and folders seamlessly. The File Manager UI mirrors the folder hierarchy in object storage, so everything stays easy to track and bulk operations like downloading a folder as a zip just work. The app also updates in real time, so changes appear immediately as they happen.',
     features: [
       {
-        label: 'Authentication',
-        text: 'sign up & sign in with JWT session handling (auto refresh on expiry).',
-      },
-      {
         label: 'Folder Management',
         text: 'create, create nested, rename, move (drag-and-drop or menu), trash, permanently delete, listing.',
       },
@@ -134,16 +130,8 @@ export const projects: IProject[] = [
         text: 'images, common video formats (mp4, mov, webm, ...) and PDF, with an in-app preview modal.',
       },
       {
-        label: 'Layouts',
-        text: 'list and grid views (persisted).',
-      },
-      {
         label: 'Sorting & Filtering',
         text: 'sort by name, size or created date (asc/desc) and filter all / folders / files.',
-      },
-      {
-        label: 'File & Folder Size',
-        text: 'columns that show per-file size and recursive folder totals.',
       },
       {
         label: 'Storage Usage',
@@ -159,11 +147,7 @@ export const projects: IProject[] = [
       },
       {
         label: 'Trash',
-        text: 'soft-deleted items with permanent delete.',
-      },
-      {
-        label: 'Dark / Light theme',
-        text: 'switch between light and dark themes.',
+        text: 'moving a file or folder sends it to Trash, where it can be restored or permanently deleted.',
       },
     ],
   },
