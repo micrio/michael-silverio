@@ -8,6 +8,7 @@ import {
 
 import './App.css';
 import Background from './components/Background/Background';
+import SiteNav from './components/SiteNav/SiteNav';
 import Home from './pages/Home/Home';
 // import ThemeToggle from './pages/Home/ThemeToggle';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
@@ -26,13 +27,12 @@ function App() {
   return (
     <HashRouter>
       <ScrollToTop />
-      <div className="relative min-h-screen">
+      <div className="relative flex min-h-screen flex-col overflow-x-hidden">
         <Background />
-        <header className="mx-auto flex w-full max-w-6xl items-center justify-end px-6 py-5 md:px-10">
-          {/* Theme toggle hidden for now - dark theme only. */}
-          {/* <ThemeToggle /> */}
+        <header className="mx-auto flex w-full max-w-6xl flex-none items-center justify-end px-6 py-4 md:px-10">
+          <SiteNav />
         </header>
-        <main className="mx-auto w-full max-w-6xl px-6 pb-24 md:px-10">
+        <main className="mx-auto w-full max-w-6xl flex-1 px-6 pb-24 md:px-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />

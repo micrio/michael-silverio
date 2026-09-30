@@ -8,7 +8,7 @@ const stats = [
 
 const Hero = () => {
   return (
-    <section className="pb-10 pt-2 md:pt-4">
+    <section className="flex min-h-[calc(100svh-4.25rem)] flex-col justify-center pb-10 pt-2 md:pt-4">
       <h1 className="text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
         Michael Silverio
       </h1>

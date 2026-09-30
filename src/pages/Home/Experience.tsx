@@ -233,7 +233,7 @@ const Experience = () => {
   const canExpandRoles = roles.length > 3;
 
   return (
-    <section id="experience" className="py-16">
+    <section id="experience" className="scroll-mt-24 py-16">
       <h2 className="section-heading">Experience</h2>
       <div className="mt-10 flex flex-col gap-6">
         {visibleRoles.map((role) => (

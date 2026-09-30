@@ -41,7 +41,7 @@ const Projects = () => {
   const webProjects = projects.filter((project) => project.category === 'web');
 
   return (
-    <section id="projects" className="py-16">
+    <section id="projects" className="scroll-mt-24 py-16">
       <h2 className="section-heading mb-10">Projects</h2>
 
       <div className="grid grid-cols-1 gap-x-16 gap-y-16 md:grid-cols-2">

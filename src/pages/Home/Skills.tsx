@@ -126,7 +126,7 @@ const skillGroups: ISkillGroup[] = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-16">
+    <section id="skills" className="scroll-mt-24 py-16">
       <h2 className="section-heading">Skills</h2>
       <div className="mt-10 grid gap-6 md:grid-cols-3">
         {skillGroups.map((group) => (
