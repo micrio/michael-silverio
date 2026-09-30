@@ -79,7 +79,7 @@ const DotWaves = () => {
     };
 
     const draw = () => {
-      time += 0.008;
+      time += 0.004;
       ctx.clearRect(0, 0, width, height);
 
       // Ease the pointer toward its target so cursor motion feels like it
