@@ -119,10 +119,6 @@ export const projects: IProject[] = [
         label: 'Portfolio Provisioning',
         text: 'new users get a portfolio provisioned at sign-up, with -2, -3, \u2026 suffixes on slug collision.',
       },
-      {
-        label: 'Tests',
-        text: 'RSpec request specs assert rendered Inertia component + props for /, /:slug, /settings and the auth flows.',
-      },
     ],
     techStack: [
       { name: 'Rails 7.2', category: 'Framework' },
