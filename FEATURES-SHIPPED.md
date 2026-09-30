@@ -57,7 +57,7 @@ Only entries in this file count toward the "features shipped to production" stat
 
 `Rails, Postgres` — Shopify to ERPNext sync pipeline via webhooks and background jobs.
 
-- Developed an ETL pipeline to import Shopify data into ERPNext.
+- Developed a two-way Shopify/Linear to ERPNext ETL sync with webhook jobs.
 - Cursor-based pagination so a failed import can still resume from the last cursor instead of restarting.
 - Implemented webhook endpoints for Shopify events queuing background jobs for real-time sync.
 
@@ -82,7 +82,6 @@ Only entries in this file count toward the "features shipped to production" stat
 - Bulk CSV template import so administrators can register multiple users at once.
 - Admin console tracking activities, logins, and transactions.
 - Designed shortened signup links for user invitations.
-- Built two-way Shopify/Linear to ERPNext sync with webhook jobs.
 
 ### Job Portal
 
