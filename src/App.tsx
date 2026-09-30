@@ -32,9 +32,11 @@ function App() {
       <div className="relative flex min-h-screen flex-col overflow-x-hidden">
         <Background />
         <CursorGlow />
-        <MoreDots />
         <header className="mx-auto flex w-full max-w-6xl flex-none items-center justify-end px-6 py-4 md:px-10">
-          <SiteNav />
+          <div className="flex items-center gap-2">
+            <SiteNav />
+            <MoreDots />
+          </div>
         </header>
         <main className="mx-auto w-full max-w-6xl flex-1 px-6 pb-24 md:px-10">
           <Routes>

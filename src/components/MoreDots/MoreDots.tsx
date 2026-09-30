@@ -11,7 +11,7 @@ const MoreDots = () => {
     <button
       type="button"
       onClick={onClick}
-      className="glass fixed right-6 top-20 z-40 rounded-full px-4 py-2 text-sm font-medium text-slate-700 transition-colors dark:text-slate-200"
+      className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-white/60 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
     >
       More Dots!
     </button>
