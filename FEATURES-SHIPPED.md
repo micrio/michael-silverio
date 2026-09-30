@@ -78,7 +78,7 @@ Only entries in this file count toward the "features shipped to production" stat
 
 `Rails, Postgres` — Shipment management with dashboard analytics and ERPNext sync.
 
-- Created a complex dashboard with multiple filters and five dynamic content sections.
+- Created a complex dashboard with multiple filters and five dynamic content sections covering total containers shipped, the regions they are shipped to, shipment status, and other live metrics that update with the selected filters.
 - Bulk CSV template import so administrators can register multiple users at once.
 - Admin console tracking activities, logins, and transactions.
 - Designed shortened signup links for user invitations.
