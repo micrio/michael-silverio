@@ -33,7 +33,7 @@ const MoreDots = () => {
       <button
         type="button"
         onClick={onClick}
-        className="fixed right-6 top-4 z-40 hidden rounded-full border border-slate-900/15 px-3 py-2 text-sm font-medium text-slate-600 backdrop-blur transition-colors hover:bg-white/60 hover:text-slate-900 dark:border-white/15 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white lg:block"
+        className="fixed bottom-6 right-6 z-40 hidden rounded-full border border-slate-900/15 px-2.5 py-1.5 text-xs font-medium text-slate-600 backdrop-blur transition-colors hover:bg-white/60 hover:text-slate-900 dark:border-white/15 dark:bg-slate-900/40 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white lg:block"
       >
         More Dots!
       </button>
