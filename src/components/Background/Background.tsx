@@ -1,3 +1,5 @@
+import DotWaves from '../DotWaves/DotWaves';
+
 const Background = () => {
   return (
     <div
@@ -9,6 +11,7 @@ const Background = () => {
       <div className="absolute -right-32 top-1/4 h-[26rem] w-[26rem] rounded-full bg-cyan-300/45 blur-3xl dark:bg-fuchsia-600/20" />
       <div className="absolute bottom-0 left-1/3 h-[26rem] w-[26rem] rounded-full bg-violet-300/40 blur-3xl dark:bg-purple-700/20" />
       <div className="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-sky-400/40 blur-3xl dark:bg-blue-600/10" />
+      <DotWaves />
     </div>
   );
 };
