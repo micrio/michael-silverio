@@ -43,8 +43,8 @@ const Reveal = ({ children, className, delay = 0 }: IReveal) => {
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={clsx(
-        'will-change-[opacity] transition-opacity duration-1000 ease-out',
-        visible ? 'opacity-100' : 'opacity-0',
+        'will-change-[opacity,transform] transition-all duration-[1500ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
+        visible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0',
         className
       )}
     >

@@ -1,5 +1,3 @@
-import Button from '../../components/Button/Button';
-
 const Contacts = () => {
   const handleGithubClick = () => {
     window.open('https://github.com/micrio', '_blank', 'noopener, noreferrer');
@@ -17,6 +15,9 @@ const Contacts = () => {
     window.location.href = 'mailto:mikesil121@gmail.com';
   };
 
+  const buttonClasses =
+    'glass-subtle rounded-2xl px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:text-slate-900 dark:text-slate-200 dark:hover:text-white';
+
   return (
     <section id="contact" className="scroll-mt-24 py-16">
       <h2 className="section-heading">Let&apos;s connect</h2>
@@ -24,15 +25,15 @@ const Contacts = () => {
         Open to new opportunities and collaborations. Reach out any time.
       </p>
       <div className="mt-8 flex flex-wrap gap-4">
-        <Button variant="ghost" onClick={handleGithubClick}>
+        <button type="button" onClick={handleGithubClick} className={buttonClasses}>
           Github
-        </Button>
-        <Button variant="ghost" onClick={handleLinkedInClick}>
+        </button>
+        <button type="button" onClick={handleLinkedInClick} className={buttonClasses}>
           LinkedIn
-        </Button>
-        <Button variant="ghost" onClick={handleEmailClick}>
+        </button>
+        <button type="button" onClick={handleEmailClick} className={buttonClasses}>
           Email
-        </Button>
+        </button>
       </div>
     </section>
   );

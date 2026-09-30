@@ -1,31 +1,24 @@
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 import YearsCounter from '../../components/YearsCounter/YearsCounter';
-import {
-  totalFeaturesAndContributions,
-  totalProductionApps,
-} from '../../data/production';
+import { totalFeaturesAndContributions } from '../../data/production';
+
+interface IHeroProps {
+  onFeaturesShippedClick: () => void;
+}
 
 const WEB_DEV_START_YEAR = 2020;
 
 const stats = [
   { startYear: WEB_DEV_START_YEAR, label: 'years building for the web', suffix: '+' },
   {
-    value: totalProductionApps,
-    label: 'production apps contributed to',
-    to: '/production-apps',
-    suffix: '',
-  },
-  {
     value: totalFeaturesAndContributions,
     label: 'features & contributions shipped',
-    to: '/shipped-features',
     suffix: '',
   },
 ];
 
-const Hero = () => {
+const Hero = ({ onFeaturesShippedClick }: IHeroProps) => {
   return (
     <section className="flex min-h-[calc(100svh-4.25rem)] items-center pb-10 pt-2 md:pt-4">
       <div className="grid w-full gap-10 lg:grid-cols-[68%_32%] lg:items-center lg:gap-16">
@@ -45,7 +38,7 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          {stats.map(({ startYear, value, label, to, suffix }) => {
+          {stats.map(({ startYear, value, label, suffix }, index) => {
             const content = (
               <>
                 <YearsCounter
@@ -57,7 +50,7 @@ const Hero = () => {
                 <span className="flex-1 text-xs text-slate-500 dark:text-slate-400">
                   {label}
                 </span>
-                {to && (
+                {index === 1 && (
                   <ArrowRight
                     size={16}
                     className="text-slate-400 dark:text-slate-500"
@@ -67,12 +60,17 @@ const Hero = () => {
             );
 
             const classes =
-              'glass-subtle group flex items-center gap-3 rounded-xl px-4 py-3.5';
+              'glass-subtle group flex items-center gap-3 rounded-xl px-4 py-3.5 text-left';
 
-            return to ? (
-              <Link key={label} to={to} className={classes}>
+            return index === 1 ? (
+              <button
+                key={label}
+                type="button"
+                onClick={onFeaturesShippedClick}
+                className={classes}
+              >
                 {content}
-              </Link>
+              </button>
             ) : (
               <div key={label} className={classes}>
                 {content}

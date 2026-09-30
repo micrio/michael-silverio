@@ -133,13 +133,13 @@ const Skills = () => {
   return (
     <section id="skills" className="scroll-mt-24 py-16">
       <h2 className="section-heading">Skills</h2>
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-10 flex flex-col gap-8">
         {skillGroups.map((group) => (
-          <div key={group.title} className="glass rounded-2xl p-6">
+          <div key={group.title}>
             <h3 className="text-sm font-medium uppercase tracking-widest text-slate-500 dark:text-slate-400">
               {group.title}
             </h3>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-3 flex flex-wrap gap-2">
               {sortByIcon(group.skills).map((skill) => (
                 <Badge key={skill}>
                   <SkillIcon name={skill} />

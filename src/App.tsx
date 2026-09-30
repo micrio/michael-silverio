@@ -13,9 +13,7 @@ import MoreDots from './components/MoreDots/MoreDots';
 import SiteNav from './components/SiteNav/SiteNav';
 import Home from './pages/Home/Home';
 // import ThemeToggle from './pages/Home/ThemeToggle';
-import ProductionApps from './pages/ProductionApps/ProductionApps';
 import ProjectDetail from './pages/ProjectDetail/ProjectDetail';
-import ShippedFeatures from './pages/ShippedFeatures/ShippedFeatures';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -42,8 +40,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />
-            <Route path="/production-apps" element={<ProductionApps />} />
-            <Route path="/shipped-features" element={<ShippedFeatures />} />
             <Route path="*" element={<Home />} />
           </Routes>
         </main>
