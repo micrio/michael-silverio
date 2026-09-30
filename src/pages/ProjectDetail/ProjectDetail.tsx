@@ -1,4 +1,4 @@
-import { ArrowLeft } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 
 import Badge from '../../components/Badge/Badge';
@@ -19,7 +19,7 @@ const ProjectDetail = () => {
       to="/"
       className="inline-flex items-center gap-1 text-sm font-medium text-slate-800 underline decoration-slate-400/50 underline-offset-4 transition-colors hover:text-slate-950 dark:text-slate-100 dark:hover:text-white"
     >
-      <ArrowLeft size={16} />
+      <ChevronLeft size={16} />
       Back to projects
     </Link>
   );

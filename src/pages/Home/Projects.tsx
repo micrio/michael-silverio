@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import Badge from '../../components/Badge/Badge';
@@ -22,7 +22,7 @@ const ProjectCard = ({ project }: { project: IProject }) => {
             className="mx-3 mt-4 inline-flex items-center gap-1 text-sm font-medium text-slate-800 underline decoration-slate-400/50 underline-offset-4 transition-colors hover:text-slate-950 dark:text-slate-100 dark:hover:text-white"
           >
             Read more
-            <ArrowRight size={16} />
+            <ChevronRight size={16} />
           </Link>
         </>
       }

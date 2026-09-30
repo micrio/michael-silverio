@@ -1,9 +1,10 @@
-import { ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 import YearsCounter from '../../components/YearsCounter/YearsCounter';
 import { totalFeaturesAndContributions } from '../../data/production';
 
 interface IHeroProps {
+  onYearsClick: () => void;
   onFeaturesShippedClick: () => void;
 }
 
@@ -18,7 +19,8 @@ const stats = [
   },
 ];
 
-const Hero = ({ onFeaturesShippedClick }: IHeroProps) => {
+const Hero = ({ onYearsClick, onFeaturesShippedClick }: IHeroProps) => {
+  const handlers = [onYearsClick, onFeaturesShippedClick];
   return (
     <section className="flex min-h-[calc(100svh-4.25rem)] items-center pb-10 pt-2 md:pt-4">
       <div className="grid w-full gap-10 lg:grid-cols-[68fr_32fr] lg:items-center lg:gap-16">
@@ -50,31 +52,25 @@ const Hero = ({ onFeaturesShippedClick }: IHeroProps) => {
                 <span className="flex-1 text-xs text-slate-500 dark:text-slate-400">
                   {label}
                 </span>
-                {index === 1 && (
-                  <ArrowRight
-                    size={16}
-                    className="text-slate-400 dark:text-slate-500"
-                  />
-                )}
+                <ChevronRight
+                  size={16}
+                  className="text-slate-400 dark:text-slate-500"
+                />
               </>
             );
 
             const classes =
               'glass-subtle group flex items-center gap-3 rounded-xl px-4 py-3.5 text-left';
 
-            return index === 1 ? (
+            return (
               <button
                 key={label}
                 type="button"
-                onClick={onFeaturesShippedClick}
+                onClick={handlers[index]}
                 className={classes}
               >
                 {content}
               </button>
-            ) : (
-              <div key={label} className={classes}>
-                {content}
-              </div>
             );
           })}
         </div>

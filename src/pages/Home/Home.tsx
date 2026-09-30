@@ -17,8 +17,8 @@ const Home = () => {
     'detailed' | 'features'
   >('detailed');
 
-  const openFeaturesShipped = () => {
-    setExperienceTab('features');
+  const openExperience = (tab: 'detailed' | 'features') => {
+    setExperienceTab(tab);
     document
       .getElementById('experience')
       ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -27,7 +27,10 @@ const Home = () => {
   return (
     <>
       <Reveal>
-        <Hero onFeaturesShippedClick={openFeaturesShipped} />
+        <Hero
+          onYearsClick={() => openExperience('detailed')}
+          onFeaturesShippedClick={() => openExperience('features')}
+        />
       </Reveal>
       <Reveal>
         <Projects />
