@@ -10,16 +10,18 @@ import {
 const WEB_DEV_START_YEAR = 2020;
 
 const stats = [
-  { startYear: WEB_DEV_START_YEAR, label: 'years building for the web' },
+  { startYear: WEB_DEV_START_YEAR, label: 'years building for the web', suffix: '+' },
   {
     value: totalProductionApps,
     label: 'production apps contributed to',
     to: '/production-apps',
+    suffix: '',
   },
   {
     value: totalFeaturesAndContributions,
     label: 'features & contributions shipped',
     to: '/shipped-features',
+    suffix: '',
   },
 ];
 
@@ -40,12 +42,13 @@ const Hero = () => {
           agentic coding to get there quicker.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          {stats.map(({ startYear, value, label, to }) => {
+          {stats.map(({ startYear, value, label, to, suffix }) => {
             const content = (
               <>
                 <YearsCounter
                   startYear={startYear}
                   value={value}
+                  suffix={suffix}
                   className="text-3xl font-semibold text-slate-900 dark:text-white"
                 />
                 <span className="text-sm text-slate-600 dark:text-slate-400">

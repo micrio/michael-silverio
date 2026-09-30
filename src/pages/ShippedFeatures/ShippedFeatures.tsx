@@ -85,7 +85,7 @@ const ShippedFeatures = () => {
 
       <h1 className="section-heading mt-6">Features &amp; Contributions</h1>
       <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">
-        {totalFeaturesAndContributions}+ items delivered to production —{' '}
+        {totalFeaturesAndContributions} items delivered to production —{' '}
         {totalShippedFeatures} features and {totalContributions} contributions,
         grouped by application.
       </p>
