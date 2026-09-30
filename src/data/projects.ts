@@ -164,15 +164,11 @@ export const projects: IProject[] = [
       'HR Zen is a multi-tenant human resources platform. Resources are tenant-scoped and access-controlled, covering leave management, payroll, performance reviews, records/documents, and people/org management.',
     features: [
       {
-        label: 'Authorization',
-        text: 'Pundit policies per resource, executed on top of tenant scoping.',
-      },
-      {
         label: 'Leave Management',
         text: 'leave types, balances (entitlement vs. used, bulk populate), and applications with status lifecycle.',
       },
       {
-        label: 'Holidays',
+        label: 'Holiday Management',
         text: 'calendar with recurring support.',
       },
       {
@@ -186,14 +182,6 @@ export const projects: IProject[] = [
       {
         label: 'Performance Reviews',
         text: 'reviewer, period, rating, status, strengths/areas.',
-      },
-      {
-        label: 'Records & Documents',
-        text: 'SetupWorkspaceJob seeds default roles/record types after sign-up.',
-      },
-      {
-        label: 'People & Org',
-        text: 'user directory with custom fields, addresses, and soft delete (paranoia).',
       },
       {
         label: 'Organizations & Teams',
