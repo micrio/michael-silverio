@@ -23,6 +23,16 @@ const Card = ({
   const [active, setActive] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Keep the dot row narrow even with many images by showing a window
+  // of dots centered on the active image.
+  const maxDots = 7;
+  const dotStart = Math.max(
+    0,
+    Math.min(active - Math.floor(maxDots / 2), images.length - maxDots)
+  );
+  const dotEnd = Math.min(images.length, dotStart + maxDots);
+  const visibleDots = images.slice(dotStart, dotEnd);
+
   const showPrev = useCallback(
     () => setActive((prev) => (prev - 1 + images.length) % images.length),
     [images.length]
@@ -100,20 +110,25 @@ const Card = ({
                 <ChevronRight size={18} />
               </button>
 
-              <div className="absolute bottom-3 left-1/2 flex -translate-x-1/2 gap-1.5">
-                {images.map((image, index) => (
-                  <button
-                    key={image}
-                    type="button"
-                    onClick={() => setActive(index)}
-                    aria-label={`Go to preview ${index + 1}`}
-                    aria-current={index === active}
-                    className={clsx(
-                      'h-2 w-2 rounded-full transition-colors',
-                      index === active ? 'bg-white' : 'bg-white/50 hover:bg-white/80'
-                    )}
-                  />
-                ))}
+              <div className="absolute bottom-3 left-1/2 flex max-w-[80%] -translate-x-1/2 gap-1.5">
+                {visibleDots.map((image, offset) => {
+                  const index = dotStart + offset;
+                  return (
+                    <button
+                      key={image}
+                      type="button"
+                      onClick={() => setActive(index)}
+                      aria-label={`Go to preview ${index + 1}`}
+                      aria-current={index === active}
+                      className={clsx(
+                        'h-2 w-2 shrink-0 rounded-full transition-colors',
+                        index === active
+                          ? 'bg-white'
+                          : 'bg-white/50 hover:bg-white/80'
+                      )}
+                    />
+                  );
+                })}
               </div>
             </>
           )}
