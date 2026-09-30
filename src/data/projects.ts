@@ -111,10 +111,6 @@ export const projects: IProject[] = [
         label: 'Theming',
         text: 'palette + mode + custom colors resolved into a single ThemeColors object; layout uses Tailwind, themed surfaces use inline styles.',
       },
-      {
-        label: 'Portfolio Provisioning',
-        text: 'new users get a portfolio provisioned at sign-up, with -2, -3, \u2026 suffixes on slug collision.',
-      },
     ],
     techStack: [
       { name: 'Rails 7.2', category: 'Framework' },
