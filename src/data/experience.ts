@@ -78,7 +78,7 @@ export const experienceRoles: IRole[] = [
         description: 'Shopify to ERPNext sync pipeline via webhooks and background jobs.',
         features: [
           'Developed an ETL pipeline to import Shopify data into ERPNext.',
-          'Cursor-based pagination so a failed ETL run resumes from the last cursor.',
+          'Cursor-based pagination so a failed import can still resume from the last cursor instead of restarting.',
           'Implemented webhook endpoints for Shopify events queuing background jobs for real-time sync.',
           'Created API wrappers for ERPNext Items, Brands, and Suppliers.',
         ],
