@@ -37,10 +37,10 @@ const Hero = () => {
             AI Engineer &middot; Full-Stack Developer
           </p>
           <p className="mt-4 max-w-2xl text-left text-lg leading-relaxed text-slate-600 dark:text-slate-300">
-            I build AI-powered products through web development — with a
-            product-first mentality. I ship what users actually need rather than
-            features nobody asked for: validating early, iterating fast, and using
-            agentic coding to get there quicker.
+            I build AI-powered products with a product-first mentality. Asking
+            the right questions and understanding what users actually want makes
+            it easier to build the right solutions — so I validate early,
+            iterate fast, and use agentic coding to get there quicker.
           </p>
         </div>
 
