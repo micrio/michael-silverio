@@ -44,7 +44,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col items-end gap-3">
           {stats.map(({ startYear, value, label, to, suffix }, index) => {
             const content = (
               <>
@@ -53,23 +53,23 @@ const Hero = () => {
                     startYear={startYear}
                     value={value}
                     suffix={suffix}
-                    className="text-3xl font-semibold text-slate-900 dark:text-white"
+                    className="text-2xl font-semibold text-slate-900 dark:text-white"
                   />
                   {to && (
                     <ArrowRight
-                      size={16}
+                      size={14}
                       className="mt-1 text-slate-500 transition-transform group-hover:translate-x-0.5 dark:text-slate-400"
                     />
                   )}
                 </div>
-                <span className="text-sm text-slate-600 dark:text-slate-400">
+                <span className="text-xs text-slate-600 dark:text-slate-400">
                   {label}
                 </span>
               </>
             );
 
             const widthClass = ['sm:w-1/3', 'sm:w-2/3', ''][index];
-            const classes = `glass group flex min-h-[7rem] w-full flex-col justify-between gap-4 rounded-2xl p-5 ${widthClass}`;
+            const classes = `glass group flex min-h-[5.5rem] w-full flex-col justify-between gap-3 rounded-2xl p-4 ${widthClass}`;
 
             return to ? (
               <Link key={label} to={to} className={classes}>
