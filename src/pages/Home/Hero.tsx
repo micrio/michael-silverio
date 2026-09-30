@@ -28,14 +28,14 @@ const stats = [
 const Hero = () => {
   return (
     <section className="flex min-h-[calc(100svh-4.25rem)] flex-col justify-center pb-10 pt-2 md:pt-4">
-      <div className="w-full">
-        <h1 className="text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
+      <div className="mx-auto w-full max-w-2xl">
+        <h1 className="text-left text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
           Michael Silverio
         </h1>
         <p className="mt-3 text-lg font-medium text-slate-700 dark:text-slate-300 md:text-xl">
           AI Engineer &middot; Full-Stack Developer
         </p>
-        <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+        <p className="mt-4 max-w-2xl text-left text-lg leading-relaxed text-slate-600 dark:text-slate-300">
           I build AI-powered products through web development — with a
           product-first mentality. I ship what users actually need rather than
           features nobody asked for: validating early, iterating fast, and using
