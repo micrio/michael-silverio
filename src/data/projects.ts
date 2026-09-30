@@ -34,7 +34,7 @@ export const projects: IProject[] = [
     images: localImages('market_sentinel', 6),
     badges: ['Rails', 'React', 'Inertia.js', 'TypeScript', 'Tailwindcss', 'RubyLLM'],
     overview:
-      'Market Sentinel is a stock watchlist that pairs live quotes with news-driven sentiment analysis. It uses no paid data APIs: quotes are cached server-side and sentiment is scored from public RSS headlines, with multi-horizon projections and rationale. Runs are persisted per user and symbol, and execute in the background so you can keep navigating. Educational tool only \u2014 not financial advice.',
+      'Market Sentinel is a stock watchlist that pairs live quotes with news-driven sentiment analysis. It uses no paid data APIs: quotes are cached server-side and sentiment is scored from public RSS headlines, with multi-horizon projections and rationale.',
     features: [
       {
         label: 'Watchlist',
