@@ -5,6 +5,60 @@ interface ISkillGroup {
   skills: string[];
 }
 
+// Skill -> Simple Icons slug (https://simpleicons.org). Skills without a
+// logo simply render without an icon. Icons are masked so they inherit the
+// badge text color and stay visible in both light and dark themes.
+const SKILL_ICONS: Record<string, string> = {
+  Ruby: 'ruby',
+  JavaScript: 'javascript',
+  TypeScript: 'typescript',
+  Python: 'python',
+  'Ruby on Rails': 'rubyonrails',
+  Sidekiq: 'sidekiq',
+  React: 'react',
+  'Next.js': 'nextdotjs',
+  Redux: 'redux',
+  'Tailwind CSS': 'tailwindcss',
+  'HTML/CSS/SCSS': 'html5',
+  jQuery: 'jquery',
+  CoffeeScript: 'coffeescript',
+  'Hotwire Stimulus': 'hotwire',
+  MySQL: 'mysql',
+  PostgreSQL: 'postgresql',
+  SQLite: 'sqlite',
+  GraphQL: 'graphql',
+  Docker: 'docker',
+  Kubernetes: 'kubernetes',
+  Grafana: 'grafana',
+  'Zoho Integration': 'zoho',
+};
+
+const SkillIcon = ({ name }: { name: string }) => {
+  const slug = SKILL_ICONS[name];
+  if (!slug) {
+    return null;
+  }
+
+  const url = `https://cdn.simpleicons.org/${slug}`;
+
+  return (
+    <span
+      aria-hidden
+      className="h-3.5 w-3.5 shrink-0 bg-current"
+      style={{
+        WebkitMaskImage: `url(${url})`,
+        maskImage: `url(${url})`,
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskSize: 'contain',
+        maskSize: 'contain',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
+      }}
+    />
+  );
+};
+
 const skillGroups: ISkillGroup[] = [
   {
     title: 'Languages',
@@ -82,7 +136,10 @@ const Skills = () => {
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {group.skills.map((skill) => (
-                <Badge key={skill}>{skill}</Badge>
+                <Badge key={skill}>
+                  <SkillIcon name={skill} />
+                  {skill}
+                </Badge>
               ))}
             </div>
           </div>
