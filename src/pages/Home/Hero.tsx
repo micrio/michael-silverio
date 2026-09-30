@@ -60,7 +60,7 @@ const Hero = () => {
                 {to && (
                   <ArrowRight
                     size={16}
-                    className="text-slate-400 transition-transform group-hover:translate-x-0.5 dark:text-slate-500"
+                    className="text-slate-400 dark:text-slate-500"
                   />
                 )}
               </>

@@ -46,7 +46,7 @@ const ProductionApps = () => {
                 }`}
               <ArrowUpRight
                 size={14}
-                className="text-slate-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 dark:text-slate-400"
+                className="text-slate-500 dark:text-slate-400"
               />
             </Link>
             <ul className="mt-4 flex flex-col gap-2">
