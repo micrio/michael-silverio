@@ -28,7 +28,7 @@ const stats = [
 const Hero = () => {
   return (
     <section className="flex min-h-[calc(100svh-4.25rem)] items-center pb-10 pt-2 md:pt-4">
-      <div className="grid w-full gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
+      <div className="grid w-full gap-10 lg:grid-cols-[60%_40%] lg:items-center lg:gap-16">
         <div className="flex flex-col items-start">
           <h1 className="text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
             Michael Silverio
@@ -68,7 +68,7 @@ const Hero = () => {
               </>
             );
 
-            const widthClass = ['', 'sm:w-2/3', 'sm:w-1/3'][index];
+            const widthClass = ['sm:w-1/3', 'sm:w-2/3', ''][index];
             const classes = `glass group flex min-h-[7rem] w-full flex-col justify-between gap-4 rounded-2xl p-5 ${widthClass}`;
 
             return to ? (
