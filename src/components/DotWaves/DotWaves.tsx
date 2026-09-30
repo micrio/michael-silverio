@@ -21,7 +21,7 @@ const DotWaves = () => {
 
     const dpr = window.devicePixelRatio || 1;
     const spacing = 36;
-    const radius = 200;
+    const radius = 130;
     const repulse = 0.55;
     const spring = 0.006;
     const damping = 0.94;
