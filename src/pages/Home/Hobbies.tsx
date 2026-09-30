@@ -1,4 +1,4 @@
-import { Code2, Cpu, Music } from 'lucide-react';
+import { Cpu, Gamepad2, Mountain, Music } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 interface IHobby {
@@ -20,9 +20,14 @@ const hobbies: IHobby[] = [
     icon: Music,
   },
   {
-    label: 'Coding',
-    description: 'Building projects and exploring new stacks.',
-    icon: Code2,
+    label: 'Hiking',
+    description: 'Love the feeling of being on top and breathing in the fresh air.',
+    icon: Mountain,
+  },
+  {
+    label: 'Gaming',
+    description: 'Competitive games and the thrill of a close match.',
+    icon: Gamepad2,
   },
 ];
 
