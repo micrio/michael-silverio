@@ -36,7 +36,7 @@ export const experienceRoles: IRole[] = [
           'Multiple terms & conditions options so each Registrant Type can use its own terms.',
           'Background ZIP export to download all S3 images for volunteers registered to a site.',
           'L3 discounts for Stripe payments to follow new protocols.',
-          'Replaced the text editor with the open-source HugeRTE editor, enabling direct image paste and save.',
+          'Replaced the text editor with the open-source HugeRTE editor, enabling direct image paste.',
           'Created a simple knowledge base portal.',
         ],
         contributions: [
