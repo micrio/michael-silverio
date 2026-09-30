@@ -28,13 +28,13 @@ const SiteNav = () => {
   };
 
   return (
-    <nav className="flex items-center gap-1">
+    <nav className="flex flex-wrap items-center justify-end gap-1">
       {links.map((link) => (
         <button
           key={link.id}
           type="button"
           onClick={() => goToSection(link.id)}
-          className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-white/60 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+          className="rounded-lg px-2.5 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-white/60 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white sm:px-3"
         >
           {link.label}
         </button>

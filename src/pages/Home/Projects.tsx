@@ -44,7 +44,7 @@ const Projects = () => {
     <section id="projects" className="scroll-mt-24 py-16">
       <h2 className="section-heading mb-10">Projects</h2>
 
-      <div className="grid grid-cols-1 gap-x-16 gap-y-16 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-16 md:gap-y-16">
         {webProjects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

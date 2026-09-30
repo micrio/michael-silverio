@@ -35,10 +35,10 @@ function App() {
         <Background />
         <CursorGlow />
         <MoreDots />
-        <header className="mx-auto flex w-full max-w-6xl flex-none items-center justify-end px-6 py-4 md:px-10">
+        <header className="mx-auto flex w-full max-w-6xl flex-none items-center justify-end px-4 py-4 sm:px-6 md:px-10">
           <SiteNav />
         </header>
-        <main className="mx-auto w-full max-w-6xl flex-1 px-6 pb-24 md:px-10">
+        <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-24 sm:px-6 md:px-10">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projects/:slug" element={<ProjectDetail />} />

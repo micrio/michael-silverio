@@ -30,7 +30,7 @@ const Hero = () => {
     <section className="flex min-h-[calc(100svh-4.25rem)] items-center pb-10 pt-2 md:pt-4">
       <div className="grid w-full gap-10 lg:grid-cols-[68%_32%] lg:items-center lg:gap-16">
         <div className="flex flex-col items-start">
-          <h1 className="text-left text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
+          <h1 className="text-left text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-7xl">
             Michael Silverio
           </h1>
           <p className="mt-3 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-lg font-medium text-transparent dark:from-blue-400 dark:to-pink-400 md:text-xl">
