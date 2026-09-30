@@ -30,6 +30,7 @@ These entries are **not** counted toward the "features shipped to production" st
 
 `Rails, Postgres` — Shopify to ERPNext sync pipeline via webhooks and background jobs.
 
+- Created API wrappers for ERPNext Items, Brands, and Suppliers.
 - Analyzed ERPNext API payloads to update the data mapping layer.
 
 ---
