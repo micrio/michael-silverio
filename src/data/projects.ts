@@ -67,7 +67,7 @@ export const projects: IProject[] = [
     shortDescription:
       'A portfolio-chat app. Visitors land on a personal portfolio by email or slug and chat with an AI assistant about the owner, while signed-in owners manage everything from a settings dashboard.',
     images: localImages('speedfolio', 17),
-    badges: ['Rails', 'React', 'Inertia.js', 'TypeScript', 'Tailwindcss', 'DeepSeek'],
+    badges: ['Rails', 'React', 'Inertia.js', 'TypeScript', 'Tailwindcss', 'AI Integration'],
     overview:
       'Speedfolio is a portfolio-chat app. A visitor lands with an email or slug and is routed to that person\u2019s portfolio, then chats with an AI assistant about the owner (Me, Projects, Skills, Hobbies). Signed-in owners manage everything from a full-page settings dashboard, with portfolios, chats and messages persisted per visitor.',
     features: [
