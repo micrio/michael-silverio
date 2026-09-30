@@ -22,6 +22,8 @@ const Reveal = ({ children, className, delay = 0 }: IReveal) => {
       return;
     }
 
+    // Threshold 0 so tall sections (taller than the viewport, common on
+    // mobile) still reveal — a ratio threshold can never be met by them.
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,7 +31,7 @@ const Reveal = ({ children, className, delay = 0 }: IReveal) => {
           observer.disconnect();
         }
       },
-      { threshold: 0.2, rootMargin: '0px 0px -20% 0px' }
+      { threshold: 0, rootMargin: '0px 0px -10% 0px' }
     );
 
     observer.observe(element);
