@@ -3,11 +3,6 @@ export interface IFeature {
   text: string;
 }
 
-export interface ITechStackItem {
-  name: string;
-  category: string;
-}
-
 export interface IProject {
   slug: string;
   title: string;
@@ -19,7 +14,6 @@ export interface IProject {
   repoPrivate?: boolean;
   overview?: string;
   features?: IFeature[];
-  techStack?: ITechStackItem[];
 }
 
 const localImages = (folder: string, count: number): string[] =>
@@ -63,20 +57,6 @@ export const projects: IProject[] = [
         text: 'crawls recent headlines, scores sentiment (DeepSeek via RubyLLM, or a keyword fallback) and projects This Week / Next Month / Next Year with probabilities, biases and rationale.',
       },
     ],
-    techStack: [
-      { name: 'Rails 7.2', category: 'Framework' },
-      { name: 'Inertia.js', category: 'Adapter' },
-      { name: 'React 19', category: 'Frontend' },
-      { name: 'TypeScript', category: 'Language' },
-      { name: 'Tailwind CSS v4', category: 'Styling' },
-      { name: 'SQLite', category: 'Database' },
-      { name: 'Solid Queue', category: 'Background jobs' },
-      { name: 'Devise', category: 'Authentication' },
-      { name: 'RubyLLM (DeepSeek)', category: 'Sentiment analysis' },
-      { name: 'Nokogiri', category: 'RSS parsing' },
-      { name: 'Recharts', category: 'Charts' },
-      { name: 'Lucide', category: 'Icons' },
-    ],
   },
   {
     slug: 'speedfolio',
@@ -111,19 +91,6 @@ export const projects: IProject[] = [
         label: 'Theming',
         text: 'palette + mode + custom colors resolved into a single ThemeColors object; layout uses Tailwind, themed surfaces use inline styles.',
       },
-    ],
-    techStack: [
-      { name: 'Rails 7.2', category: 'Framework' },
-      { name: 'Inertia.js', category: 'Adapter' },
-      { name: 'React 19', category: 'Frontend' },
-      { name: 'TypeScript', category: 'Language' },
-      { name: 'Tailwind CSS 4', category: 'Styling' },
-      { name: 'SQLite 3', category: 'Database' },
-      { name: 'Devise', category: 'Authentication' },
-      { name: 'Pundit', category: 'Authorization' },
-      { name: 'ruby_llm + DeepSeek', category: 'AI chat' },
-      { name: 'vite_rails + Vite 7', category: 'Assets' },
-      { name: 'RSpec / FactoryBot', category: 'Testing' },
     ],
   },
   {
@@ -199,13 +166,6 @@ export const projects: IProject[] = [
         text: 'switch between light and dark themes.',
       },
     ],
-    techStack: [
-      { name: 'React 18', category: 'Framework' },
-      { name: 'Zustand', category: 'State management library' },
-      { name: 'Shadcn', category: 'Component library' },
-      { name: 'ActionCable', category: 'Real-time updates' },
-      { name: 'Zod', category: 'Schema validation' },
-    ],
   },
   {
     slug: 'hr-zen',
@@ -275,18 +235,6 @@ export const projects: IProject[] = [
         label: 'Attendance Settings',
         text: 'enable/disable, cooldown, event history/listing.',
       },
-    ],
-    techStack: [
-      { name: 'Rails 8', category: 'Framework' },
-      { name: 'React', category: 'Frontend' },
-      { name: 'Inertia.js', category: 'Adapter' },
-      { name: 'PostgreSQL', category: 'Database' },
-      { name: 'Devise', category: 'Authentication' },
-      { name: 'Solid Queue', category: 'Background jobs' },
-      { name: 'acts_as_tenant', category: 'Multi-tenancy' },
-      { name: 'Pundit', category: 'Authorization' },
-      { name: 'paranoia', category: 'Soft deletes' },
-      { name: 'Tailwind CSS', category: 'Styling' },
     ],
   },
   {
