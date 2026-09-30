@@ -85,11 +85,11 @@ export const projects: IProject[] = [
     repoUrl: 'https://github.com/micrio/speedfolio',
     repoPrivate: true,
     shortDescription:
-      'A portfolio-chat app built with Rails 7.2 + Inertia + React. Visitors land on a personal portfolio by email or slug and chat with an AI assistant about the owner, while signed-in owners manage everything from a settings dashboard.',
+      'A portfolio-chat app. Visitors land on a personal portfolio by email or slug and chat with an AI assistant about the owner, while signed-in owners manage everything from a settings dashboard.',
     images: localImages('speedfolio', 17),
     badges: ['Rails', 'React', 'Inertia.js', 'TypeScript', 'Tailwindcss', 'DeepSeek'],
     overview:
-      'Speedfolio is a Rails 7.2 + Inertia.js + React rewrite of a portfolio-chat app. A visitor lands with an email or slug and is routed to that person\u2019s portfolio, then chats with an AI assistant about the owner (Me, Projects, Skills, Hobbies). Signed-in owners manage everything from a full-page settings dashboard, with portfolios, chats and messages persisted in SQLite.',
+      'Speedfolio is a portfolio-chat app. A visitor lands with an email or slug and is routed to that person\u2019s portfolio, then chats with an AI assistant about the owner (Me, Projects, Skills, Hobbies). Signed-in owners manage everything from a full-page settings dashboard, with portfolios, chats and messages persisted per visitor.',
     features: [
       {
         label: 'Slug Routing',
@@ -112,6 +112,19 @@ export const projects: IProject[] = [
         text: 'palette + mode + custom colors resolved into a single ThemeColors object; layout uses Tailwind, themed surfaces use inline styles.',
       },
     ],
+    techStack: [
+      { name: 'Rails 7.2', category: 'Framework' },
+      { name: 'Inertia.js', category: 'Adapter' },
+      { name: 'React 19', category: 'Frontend' },
+      { name: 'TypeScript', category: 'Language' },
+      { name: 'Tailwind CSS 4', category: 'Styling' },
+      { name: 'SQLite 3', category: 'Database' },
+      { name: 'Devise', category: 'Authentication' },
+      { name: 'Pundit', category: 'Authorization' },
+      { name: 'ruby_llm + DeepSeek', category: 'AI chat' },
+      { name: 'vite_rails + Vite 7', category: 'Assets' },
+      { name: 'RSpec / FactoryBot', category: 'Testing' },
+    ],
   },
   {
     slug: 'file-manager',
@@ -119,11 +132,11 @@ export const projects: IProject[] = [
     category: 'web',
     repoUrl: 'https://github.com/micrio/file_manager_fe#preview',
     shortDescription:
-      'A Google Drive clone - a file manager with a React frontend and Rails backend, backed by Minio object storage with real-time ActionCable updates.',
+      'A Google Drive clone - a file manager with a real-time interface and object-storage backing.',
     images: localImages('file_manager', 9),
     badges: ['React', 'Rails', 'ActionCable', 'Zustand', 'Tailwindcss'],
     overview:
-      'A Google Drive clone with a React frontend and Rails backend. Allows users to manage their files and folders seamlessly. The app uses Minio for object storage, ensuring that the structure in the File Manager UI mirrors the structure in Minio, providing a reliable and intuitive user experience. Additionally, the app features real-time updates with ActionCable, allowing users to see changes immediately as they happen.',
+      'A Google Drive clone that lets users manage their files and folders seamlessly. The structure in the File Manager UI mirrors the structure in object storage, providing a reliable and intuitive user experience. The app also updates in real time, so changes appear immediately as they happen.',
     features: [
       {
         label: 'Authentication',
@@ -204,7 +217,7 @@ export const projects: IProject[] = [
     images: localImages('hr_zen', 29),
     badges: ['Rails', 'React', 'Inertia.js', 'PostgreSQL', 'Tailwindcss'],
     overview:
-      'HR Zen is a multi-tenant human resources platform. Resources are tenant-scoped and protected by Pundit policies, covering leave management, payroll, performance reviews, records/documents, and people/org management.',
+      'HR Zen is a multi-tenant human resources platform. Resources are tenant-scoped and access-controlled, covering leave management, payroll, performance reviews, records/documents, and people/org management.',
     features: [
       {
         label: 'Authorization',
@@ -282,10 +295,10 @@ export const projects: IProject[] = [
     category: 'web',
     repoUrl: 'https://github.com/micrio/e-learning#app-images',
     shortDescription:
-      'An e-learning platform with category-based word quizzes, user profiles, and social following, built with React and Laravel.',
+      'An e-learning platform with category-based word quizzes, user profiles, and social following.',
     images: localImages('e_learning', 20),
     badges: ['React', 'Laravel', 'Redux', 'Tailwindcss', 'MUI'],
     overview:
-      'Developed an e-learning platform where admins create word-based quizzes within categories. Users select categories, answer word-choice quizzes, and view results upon completion. Built features for login/signup, user profiles with photo updates, following other users to track activity, and viewing completed categories. Designed with Material UI and Tailwind CSS for a clean, modern interface.',
+      'Developed an e-learning platform where admins create word-based quizzes within categories. Users select categories, answer word-choice quizzes, and view results upon completion. Built features for login/signup, user profiles with photo updates, following other users to track activity, and viewing completed categories, with a clean, modern interface.',
   },
 ];
