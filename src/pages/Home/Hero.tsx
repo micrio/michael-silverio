@@ -2,13 +2,25 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import YearsCounter from '../../components/YearsCounter/YearsCounter';
+import {
+  totalProductionApps,
+  totalShippedFeatures,
+} from '../../data/production';
 
 const WEB_DEV_START_YEAR = 2020;
 
 const stats = [
   { startYear: WEB_DEV_START_YEAR, label: 'years building for the web' },
-  { value: 10, label: 'production apps contributed to', to: '/production-apps' },
-  { value: 40, label: 'features shipped to production', to: '/shipped-features' },
+  {
+    value: totalProductionApps,
+    label: 'production apps contributed to',
+    to: '/production-apps',
+  },
+  {
+    value: totalShippedFeatures,
+    label: 'features shipped to production',
+    to: '/shipped-features',
+  },
 ];
 
 const Hero = () => {
