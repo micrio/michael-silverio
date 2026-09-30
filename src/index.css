@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/60 bg-white/70 bg-gradient-to-br from-white/80 to-white/40 shadow-xl shadow-slate-900/10 ring-1 ring-inset ring-white/40 backdrop-blur-xl transition-colors duration-200 dark:border-white/10 dark:bg-white/5 dark:bg-none dark:shadow-black/20 dark:ring-white/5;
+  }
+
+  .glass-hover {
+    @apply transition duration-200 hover:from-white/90 hover:to-white/60 dark:hover:bg-white/10;
+  }
+
+  .section-heading {
+    @apply text-3xl font-semibold tracking-tight text-slate-900 dark:text-white;
+  }
+
+  .section-label {
+    @apply text-sm font-medium uppercase tracking-[0.25em] text-slate-500 dark:text-slate-400;
+  }
+}

@@ -22,8 +22,8 @@ const NavigationMenu = () => {
   return (
     <nav
       className={clsx(
-        'sticky top-0 z-10 flex justify-end w-full gap-8 px-40 py-12 mr-64 bg-white',
-        scrollPosition > 100 ? 'bg-opacity-100' : 'bg-opacity-0'
+        'glass sticky top-0 z-10 flex w-full justify-end gap-8 rounded-none px-6 py-6 md:px-10',
+        scrollPosition > 100 ? 'bg-white/80 dark:bg-slate-950/70' : 'bg-transparent backdrop-blur-0 border-transparent'
       )}
     >
       <Button>Work</Button>

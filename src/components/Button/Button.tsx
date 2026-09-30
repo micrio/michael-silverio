@@ -18,7 +18,7 @@ const Button: React.FC<IButton> = ({
   onClick,
 }) => {
   const ghostButtonStyle = () => {
-    return '123';
+    return 'glass glass-hover';
   };
 
   const buttonVariant = () => {
@@ -38,10 +38,10 @@ const Button: React.FC<IButton> = ({
   return (
     <button
       className={clsx(
-        'hover:bg-gray-100 px-3 py-2 rounded-md',
+        'rounded-lg px-3 py-2 font-medium text-slate-700 transition-colors duration-200 hover:bg-white/70 dark:text-slate-200 dark:hover:bg-white/10',
         buttonVariant,
         className,
-        type === 'link' ? 'underline' : null
+        type === 'link' ? 'underline decoration-slate-400/50 underline-offset-4' : null
       )}
       title={title}
       onClick={onClick}
