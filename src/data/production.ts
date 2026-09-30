@@ -64,3 +64,6 @@ export const totalShippedFeatures = productionApps.reduce(
 export const totalContributions =
   productionApps.reduce((sum, app) => sum + app.contributions.length, 0) +
   roleContributions.reduce((sum, role) => sum + role.items.length, 0);
+
+export const totalFeaturesAndContributions =
+  totalShippedFeatures + totalContributions;

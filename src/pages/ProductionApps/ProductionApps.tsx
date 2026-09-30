@@ -39,7 +39,11 @@ const ProductionApps = () => {
               className="group mt-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/50 px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:text-white"
             >
               <ListChecks size={14} />
-              {app.features.length} feature{app.features.length === 1 ? '' : 's'} shipped
+              {app.features.length} feature{app.features.length === 1 ? '' : 's'}
+              {app.contributions.length > 0 &&
+                ` · ${app.contributions.length} contribution${
+                  app.contributions.length === 1 ? '' : 's'
+                }`}
               <ArrowUpRight
                 size={14}
                 className="text-slate-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 dark:text-slate-400"

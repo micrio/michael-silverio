@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 import YearsCounter from '../../components/YearsCounter/YearsCounter';
 import {
-  totalContributions,
+  totalFeaturesAndContributions,
   totalProductionApps,
-  totalShippedFeatures,
 } from '../../data/production';
 
 const WEB_DEV_START_YEAR = 2020;
@@ -18,14 +17,9 @@ const stats = [
     to: '/production-apps',
   },
   {
-    value: totalShippedFeatures,
-    label: 'features shipped to production',
+    value: totalFeaturesAndContributions,
+    label: 'features & contributions shipped',
     to: '/shipped-features',
-  },
-  {
-    value: totalContributions,
-    label: 'contributions to production',
-    to: '/contributions',
   },
 ];
 
