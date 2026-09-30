@@ -125,6 +125,11 @@ const skillGroups: ISkillGroup[] = [
 ];
 
 const Skills = () => {
+  const sortByIcon = (skills: string[]) =>
+    [...skills].sort(
+      (a, b) => Number(Boolean(SKILL_ICONS[b])) - Number(Boolean(SKILL_ICONS[a]))
+    );
+
   return (
     <section id="skills" className="scroll-mt-24 py-16">
       <h2 className="section-heading">Skills</h2>
@@ -135,7 +140,7 @@ const Skills = () => {
               {group.title}
             </h3>
             <div className="mt-4 flex flex-wrap gap-2">
-              {group.skills.map((skill) => (
+              {sortByIcon(group.skills).map((skill) => (
                 <Badge key={skill}>
                   <SkillIcon name={skill} />
                   {skill}
