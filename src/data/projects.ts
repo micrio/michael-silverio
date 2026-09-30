@@ -62,18 +62,6 @@ export const projects: IProject[] = [
         label: 'Sentiment Analysis',
         text: 'crawls recent headlines, scores sentiment (DeepSeek via RubyLLM, or a keyword fallback) and projects This Week / Next Month / Next Year with probabilities, biases and rationale.',
       },
-      {
-        label: 'Background Jobs',
-        text: 'Solid Queue runs the analysis with live progress (queued \u2192 crawling \u2192 scoring \u2192 saving) and polling from the UI.',
-      },
-      {
-        label: 'Reuse & Cooldown',
-        text: 'reuses in-flight (<15m), completed (<30m) or recently failed (<60s) runs to save crawls and LLM calls.',
-      },
-      {
-        label: 'Auth',
-        text: 'Devise authentication; watchlists and analyses are scoped per user.',
-      },
     ],
     techStack: [
       { name: 'Rails 7.2', category: 'Framework' },
