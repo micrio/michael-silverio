@@ -103,7 +103,7 @@ export const projects: IProject[] = [
     images: localImages('file_manager', 9),
     badges: ['React', 'Rails', 'ActionCable', 'Zustand', 'Tailwindcss'],
     overview:
-      'A Google Drive clone that lets users manage their files and folders seamlessly. The structure in the File Manager UI mirrors the structure in object storage, providing a reliable and intuitive user experience. The app also updates in real time, so changes appear immediately as they happen.',
+      'A Google Drive clone that lets users manage their files and folders seamlessly. The File Manager UI mirrors the folder hierarchy in object storage, so everything stays easy to track and bulk operations like downloading a folder as a zip just work. The app also updates in real time, so changes appear immediately as they happen.',
     features: [
       {
         label: 'Authentication',
