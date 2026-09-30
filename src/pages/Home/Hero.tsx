@@ -1,11 +1,14 @@
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 import YearsCounter from '../../components/YearsCounter/YearsCounter';
 
 const WEB_DEV_START_YEAR = 2020;
 
 const stats = [
   { startYear: WEB_DEV_START_YEAR, label: 'years building for the web' },
-  { value: 10, label: 'production apps contributed to' },
-  { value: 40, label: 'features shipped to production' },
+  { value: 10, label: 'production apps contributed to', to: '/production-apps' },
+  { value: 40, label: 'features shipped to production', to: '/shipped-features' },
 ];
 
 const Hero = () => {
@@ -25,21 +28,37 @@ const Hero = () => {
           agentic coding to get there quicker.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          {stats.map(({ startYear, value, label }) => (
-            <div
-              key={label}
-              className="glass inline-flex items-center gap-3 rounded-2xl px-5 py-3"
-            >
-              <YearsCounter
-                startYear={startYear}
-                value={value}
-                className="text-3xl font-semibold text-slate-900 dark:text-white"
-              />
-              <span className="text-sm text-slate-600 dark:text-slate-400">
-                {label}
-              </span>
-            </div>
-          ))}
+          {stats.map(({ startYear, value, label, to }) => {
+            const content = (
+              <>
+                <YearsCounter
+                  startYear={startYear}
+                  value={value}
+                  className="text-3xl font-semibold text-slate-900 dark:text-white"
+                />
+                <span className="text-sm text-slate-600 dark:text-slate-400">
+                  {label}
+                </span>
+              </>
+            );
+
+            const classes =
+              'glass inline-flex items-center gap-3 rounded-2xl px-5 py-3';
+
+            return to ? (
+              <Link key={label} to={to} className={`${classes} group`}>
+                {content}
+                <ArrowRight
+                  size={16}
+                  className="text-slate-500 transition-transform group-hover:translate-x-0.5 dark:text-slate-400"
+                />
+              </Link>
+            ) : (
+              <div key={label} className={classes}>
+                {content}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
