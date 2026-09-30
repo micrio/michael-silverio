@@ -1,6 +1,7 @@
 import '../../App.css';
 import './Home.css';
 
+import Reveal from '../../components/Reveal/Reveal';
 import Contacts from './Contacts';
 import Experience from './Experience';
 import Hero from './Hero';
@@ -11,12 +12,24 @@ import Skills from './Skills';
 const Home = () => {
   return (
     <>
-      <Hero />
-      <Projects />
-      <Experience />
-      <Skills />
-      <Hobbies />
-      <Contacts />
+      <Reveal>
+        <Hero />
+      </Reveal>
+      <Reveal>
+        <Projects />
+      </Reveal>
+      <Reveal>
+        <Experience />
+      </Reveal>
+      <Reveal>
+        <Skills />
+      </Reveal>
+      <Reveal>
+        <Hobbies />
+      </Reveal>
+      <Reveal>
+        <Contacts />
+      </Reveal>
     </>
   );
 };
