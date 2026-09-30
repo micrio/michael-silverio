@@ -17,7 +17,7 @@
 
 @layer components {
   .glass {
-    @apply border border-white/40 bg-white/60 bg-gradient-to-br from-white/75 to-white/35 shadow-2xl shadow-black/10 ring-1 ring-inset ring-white/30 backdrop-blur-2xl backdrop-saturate-150 transition-all duration-200 hover:-translate-y-0.5 hover:from-white/85 hover:to-white/45 hover:shadow-black/15 dark:border-white/10 dark:bg-white/[0.07] dark:bg-none dark:shadow-black/30 dark:ring-white/10 dark:hover:bg-white/[0.11] dark:hover:from-transparent dark:hover:to-transparent;
+    @apply border border-white/40 bg-white/60 bg-gradient-to-br from-white/75 to-white/35 shadow-2xl shadow-black/10 ring-1 ring-inset ring-white/30 backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-200 hover:from-white/85 hover:to-white/45 hover:shadow-black/15 dark:border-white/10 dark:bg-white/[0.07] dark:bg-none dark:shadow-black/30 dark:ring-white/10 dark:hover:bg-white/[0.11] dark:hover:from-transparent dark:hover:to-transparent;
   }
 
   .glass-hover {

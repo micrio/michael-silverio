@@ -24,6 +24,18 @@ const DotWaves = () => {
     let height = 0;
     let raf = 0;
     let time = 0;
+    let pointerX: number | null = null;
+    let pointerY: number | null = null;
+
+    const onPointerMove = (event: MouseEvent) => {
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+    };
+
+    const onPointerLeave = () => {
+      pointerX = null;
+      pointerY = null;
+    };
 
     const resize = () => {
       width = window.innerWidth;
@@ -44,10 +56,20 @@ const DotWaves = () => {
 
       for (let y = 0; y <= height + spacing; y += spacing) {
         for (let x = 0; x <= width + spacing; x += spacing) {
-          const px =
+          let px =
             x + Math.sin(y * 0.008 + time) * 14 + Math.cos(x * 0.005 - time * 0.6) * 6;
-          const py =
+          let py =
             y + Math.cos(x * 0.008 + time * 0.9) * 14 + Math.sin(y * 0.005 + time * 0.7) * 6;
+
+          if (pointerX !== null && pointerY !== null) {
+            const dx = px - pointerX;
+            const dy = py - pointerY;
+            const dist = Math.hypot(dx, dy) || 1;
+            const radius = 180;
+            const force = Math.max(0, 1 - dist / radius);
+            px += (dx / dist) * force * 34;
+            py += (dy / dist) * force * 34;
+          }
 
           ctx.beginPath();
           ctx.arc(px, py, 1.4, 0, Math.PI * 2);
@@ -60,11 +82,15 @@ const DotWaves = () => {
 
     resize();
     window.addEventListener('resize', resize);
+    window.addEventListener('mousemove', onPointerMove);
+    window.addEventListener('mouseleave', onPointerLeave);
     draw();
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('resize', resize);
+      window.removeEventListener('mousemove', onPointerMove);
+      window.removeEventListener('mouseleave', onPointerLeave);
     };
   }, []);
 
