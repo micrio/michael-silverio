@@ -93,7 +93,7 @@ const DotWaves = () => {
       }
 
       const dark = document.documentElement.classList.contains('dark');
-      ctx.fillStyle = dark ? 'rgba(148, 163, 184, 0.15)' : 'rgba(51, 65, 85, 0.1)';
+      ctx.fillStyle = dark ? 'rgba(148, 163, 184, 0.09)' : 'rgba(51, 65, 85, 0.06)';
 
       for (let row = 0; row < rows; row += 1) {
         const y = row * spacing;
