@@ -17,11 +17,11 @@
 
 @layer components {
   .glass {
-    @apply border border-white/40 bg-gradient-to-br from-white/90 to-white/70 shadow-2xl shadow-black/10 ring-1 ring-inset ring-white/40 backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-200 hover:from-white hover:to-white/85 dark:border-white/10 dark:bg-none dark:bg-slate-900/85 dark:shadow-black/30 dark:ring-white/10 dark:hover:bg-slate-800/90;
+    @apply border border-white/40 bg-gradient-to-br from-white/75 to-white/50 shadow-2xl shadow-black/10 ring-1 ring-inset ring-white/40 backdrop-blur-2xl backdrop-saturate-150 transition-colors duration-200 hover:from-white/90 hover:to-white/65 dark:border-white/10 dark:bg-none dark:bg-slate-900/70 dark:shadow-black/30 dark:ring-white/10 dark:hover:bg-slate-800/80;
   }
 
   .glass-hover {
-    @apply transition duration-200 hover:bg-white/95 dark:hover:bg-slate-800/90;
+    @apply transition duration-200 hover:bg-white/85 dark:hover:bg-slate-800/80;
   }
 
   .section-heading {
