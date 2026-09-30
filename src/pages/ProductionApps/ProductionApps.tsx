@@ -1,7 +1,7 @@
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, ListChecks } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import { productionApps } from '../../data/production';
+import { appSlug, productionApps } from '../../data/production';
 
 const ProductionApps = () => {
   return (
@@ -34,6 +34,17 @@ const ProductionApps = () => {
             <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">
               {app.description}
             </p>
+            <Link
+              to={`/shipped-features#${appSlug(app.name)}`}
+              className="group mt-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/50 px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:text-white"
+            >
+              <ListChecks size={14} />
+              {app.features.length} feature{app.features.length === 1 ? '' : 's'} shipped
+              <ArrowUpRight
+                size={14}
+                className="text-slate-500 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 dark:text-slate-400"
+              />
+            </Link>
             <ul className="mt-4 flex flex-col gap-2">
               {app.features.map((feature) => (
                 <li

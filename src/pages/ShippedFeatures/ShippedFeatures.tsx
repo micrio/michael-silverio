@@ -1,13 +1,20 @@
+import { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-import { productionApps } from '../../data/production';
+import { appSlug, productionApps, totalShippedFeatures } from '../../data/production';
 
 const ShippedFeatures = () => {
-  const total = productionApps.reduce(
-    (sum, app) => sum + app.features.length,
-    0
-  );
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) {
+      return;
+    }
+
+    const target = document.getElementById(hash.replace('#', ''));
+    target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [hash]);
 
   return (
     <section className="py-10">
@@ -21,12 +28,17 @@ const ShippedFeatures = () => {
 
       <h1 className="section-heading mt-6">Features Shipped to Production</h1>
       <p className="mt-3 max-w-2xl text-slate-600 dark:text-slate-400">
-        {total}+ features delivered to production, grouped by application.
+        {totalShippedFeatures}+ features delivered to production, grouped by
+        application.
       </p>
 
       <div className="mt-10 flex flex-col gap-6">
         {productionApps.map((app) => (
-          <div key={app.name} className="glass rounded-2xl p-6 md:p-8">
+          <div
+            key={app.name}
+            id={appSlug(app.name)}
+            className="glass scroll-mt-24 rounded-2xl p-6 md:p-8"
+          >
             <div className="flex flex-col gap-1 md:flex-row md:items-baseline md:justify-between">
               <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
                 {app.name}
