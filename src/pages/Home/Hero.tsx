@@ -10,18 +10,25 @@ import {
 const WEB_DEV_START_YEAR = 2020;
 
 const stats = [
-  { startYear: WEB_DEV_START_YEAR, label: 'years building for the web', suffix: '+' },
-  {
-    value: totalProductionApps,
-    label: 'production apps contributed to',
-    to: '/production-apps',
-    suffix: '',
-  },
   {
     value: totalFeaturesAndContributions,
     label: 'features & contributions shipped',
     to: '/shipped-features',
     suffix: '',
+    size: 'large' as const,
+  },
+  {
+    startYear: WEB_DEV_START_YEAR,
+    label: 'years building for the web',
+    suffix: '+',
+    size: 'small' as const,
+  },
+  {
+    value: totalProductionApps,
+    label: 'production apps contributed to',
+    to: '/production-apps',
+    suffix: '',
+    size: 'small' as const,
   },
 ];
 
@@ -44,8 +51,8 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-end gap-3">
-          {stats.map(({ startYear, value, label, to, suffix }, index) => {
+        <div className="grid grid-cols-2 gap-3">
+          {stats.map(({ startYear, value, label, to, suffix, size }) => {
             const content = (
               <>
                 <div className="flex items-start justify-between gap-3">
@@ -53,7 +60,11 @@ const Hero = () => {
                     startYear={startYear}
                     value={value}
                     suffix={suffix}
-                    className="text-2xl font-semibold text-slate-900 dark:text-white"
+                    className={
+                      size === 'large'
+                        ? 'text-4xl font-semibold text-slate-900 dark:text-white'
+                        : 'text-2xl font-semibold text-slate-900 dark:text-white'
+                    }
                   />
                   {to && (
                     <ArrowRight
@@ -62,14 +73,21 @@ const Hero = () => {
                     />
                   )}
                 </div>
-                <span className="text-xs text-slate-600 dark:text-slate-400">
+                <span
+                  className={
+                    size === 'large'
+                      ? 'text-sm text-slate-600 dark:text-slate-400'
+                      : 'text-xs text-slate-600 dark:text-slate-400'
+                  }
+                >
                   {label}
                 </span>
               </>
             );
 
-            const widthClass = ['sm:w-1/3', 'sm:w-2/3', ''][index];
-            const classes = `glass group flex min-h-[5.5rem] w-full flex-col justify-between gap-3 rounded-2xl p-4 ${widthClass}`;
+            const classes = `glass group flex flex-col justify-between gap-4 rounded-2xl p-5 ${
+              size === 'large' ? 'row-span-2' : 'min-h-[5.5rem]'
+            }`;
 
             return to ? (
               <Link key={label} to={to} className={classes}>
