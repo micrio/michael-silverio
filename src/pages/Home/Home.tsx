@@ -6,6 +6,7 @@ import Contacts from './Contacts';
 import Experience from './Experience';
 import Hero from './Hero';
 import Hobbies from './Hobbies';
+import Pillars from './Pillars';
 import Projects from './Projects';
 import Skills from './Skills';
 
@@ -20,6 +21,9 @@ const Home = () => {
       </Reveal>
       <Reveal>
         <Experience />
+      </Reveal>
+      <Reveal>
+        <Pillars />
       </Reveal>
       <Reveal>
         <Skills />
