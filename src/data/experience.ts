@@ -11,6 +11,8 @@ export interface IRole {
   location?: string;
   title: string;
   period: string;
+  /** Short role summary shown above the app breakdown. */
+  overview?: string;
   /** Role-level work not tied to a single app (infra, process, etc.). */
   contributions?: string[];
   apps: IApp[];
@@ -22,6 +24,8 @@ export const experienceRoles: IRole[] = [
     company: 'Freelance - Upwork',
     title: 'Software Engineer',
     period: 'Dec 2024 - Present',
+    overview:
+      'Act as the senior developer on the product, working directly with the client CTO. I own end-to-end product contributions, clarify requirements, and challenge proposed specifications when a better approach exists.',
     apps: [
       {
         name: 'Registration System',

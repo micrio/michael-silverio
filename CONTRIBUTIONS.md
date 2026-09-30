@@ -18,6 +18,8 @@ These entries are **not** counted toward the "features shipped to production" st
 
 ## Freelance - Upwork (Dec 2024 - Present)
 
+Act as the senior developer on the product, working directly with the client CTO. I own end-to-end product contributions, clarify requirements, and challenge proposed specifications when a better approach exists.
+
 ### Registration System
 
 `Rails, MySQL, CoffeeScript, HAML, React` — Volunteer registration platform handling accreditation and background checks.

@@ -155,6 +155,12 @@ const Experience = () => {
               </span>
             </div>
 
+            {role.overview && (
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                {role.overview}
+              </p>
+            )}
+
             <RoleHighlights apps={role.apps} contributions={role.contributions} />
 
             {role.tech.length > 0 && (
