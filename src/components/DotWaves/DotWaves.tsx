@@ -21,10 +21,11 @@ const DotWaves = () => {
 
     const dpr = window.devicePixelRatio || 1;
     const spacing = 36;
-    const radius = 150;
-    const repulse = 1.1;
-    const spring = 0.025;
-    const damping = 0.92;
+    const radius = 200;
+    const repulse = 0.55;
+    const spring = 0.006;
+    const damping = 0.94;
+    const maxSpeed = 1.5;
 
     let width = 0;
     let height = 0;
@@ -38,6 +39,8 @@ const DotWaves = () => {
     let time = 0;
     let pointerX: number | null = null;
     let pointerY: number | null = null;
+    let pointerTargetX: number | null = null;
+    let pointerTargetY: number | null = null;
 
     const buildGrid = () => {
       cols = Math.ceil(width / spacing) + 2;
@@ -50,13 +53,13 @@ const DotWaves = () => {
     };
 
     const onPointerMove = (event: MouseEvent) => {
-      pointerX = event.clientX;
-      pointerY = event.clientY;
+      pointerTargetX = event.clientX;
+      pointerTargetY = event.clientY;
     };
 
     const onPointerLeave = () => {
-      pointerX = null;
-      pointerY = null;
+      pointerTargetX = null;
+      pointerTargetY = null;
     };
 
     const resize = () => {
@@ -73,6 +76,18 @@ const DotWaves = () => {
     const draw = () => {
       time += 0.008;
       ctx.clearRect(0, 0, width, height);
+
+      // Ease the pointer toward its target so cursor motion feels like it
+      // moves through water instead of jittering the dots.
+      if (pointerTargetX !== null && pointerTargetY !== null) {
+        if (pointerX === null || pointerY === null) {
+          pointerX = pointerTargetX;
+          pointerY = pointerTargetY;
+        } else {
+          pointerX += (pointerTargetX - pointerX) * 0.12;
+          pointerY += (pointerTargetY - pointerY) * 0.12;
+        }
+      }
 
       const dark = document.documentElement.classList.contains('dark');
       ctx.fillStyle = dark ? 'rgba(148, 163, 184, 0.26)' : 'rgba(51, 65, 85, 0.16)';
@@ -101,11 +116,12 @@ const DotWaves = () => {
             }
           }
 
-          // Spring back toward the wave position, with damping for fluid inertia.
+          // Spring back toward the wave position, with heavy damping so the
+          // field reads as viscous water rather than jiggling.
           velocityX[index] += -offsetX[index] * spring;
           velocityY[index] += -offsetY[index] * spring;
-          velocityX[index] *= damping;
-          velocityY[index] *= damping;
+          velocityX[index] = Math.max(-maxSpeed, Math.min(maxSpeed, velocityX[index] * damping));
+          velocityY[index] = Math.max(-maxSpeed, Math.min(maxSpeed, velocityY[index] * damping));
           offsetX[index] += velocityX[index];
           offsetY[index] += velocityY[index];
 
