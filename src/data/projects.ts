@@ -219,6 +219,44 @@ export const projects: IProject[] = [
     images: localImages('e_learning', 20),
     badges: ['React', 'Laravel', 'Redux', 'Tailwindcss', 'MUI'],
     overview:
-      'Developed an e-learning platform where admins create word-based quizzes within categories. Users select categories, answer word-choice quizzes, and view results upon completion. Built features for login/signup, user profiles with photo updates, following other users to track activity, and viewing completed categories, with a clean, modern interface.',
+      'An e-learning platform where admins create word-based quizzes within categories. Users pick a category, answer the word-choice quizzes, and see their results on completion. It also includes user profiles, following other users to track their activity, activity logs, and a dashboard, with a clean, modern interface.',
+    features: [
+      {
+        label: 'Category Management',
+        text: 'admins create, edit and delete quiz categories.',
+      },
+      {
+        label: 'Words & Choices',
+        text: 'admins build word-based questions with multiple choices inside each category.',
+      },
+      {
+        label: 'User Management',
+        text: 'admins view the list of registered users.',
+      },
+      {
+        label: 'Quizzes',
+        text: 'users pick a category and answer the word-choice lessons.',
+      },
+      {
+        label: 'Results',
+        text: 'results are shown on completion and completed categories can be revisited.',
+      },
+      {
+        label: 'Following',
+        text: 'follow other users to keep up with their activity.',
+      },
+      {
+        label: 'Activity Logs',
+        text: 'view your own and other users\u2019 activity.',
+      },
+      {
+        label: 'Profiles',
+        text: 'edit your profile and update your photo.',
+      },
+      {
+        label: 'Dashboard',
+        text: 'an overview for tracking progress and activity.',
+      },
+    ],
   },
 ];
