@@ -37,6 +37,26 @@
   .glow-blob {
     animation: glow-breathe 20s ease-in-out infinite;
   }
+
+  @keyframes coin-pop {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, 0) scale(0.6);
+    }
+    20% {
+      opacity: 1;
+      transform: translate(-50%, -8px) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -48px) scale(1);
+    }
+  }
+
+  .coin-pop {
+    pointer-events: none;
+    animation: coin-pop 0.9s ease-out forwards;
+  }
 }
 
 @layer components {
