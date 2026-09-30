@@ -76,6 +76,8 @@ Act as the senior developer on the product, working directly with the client CTO
 
 ## Cognith (Jul 2023 - Dec 2024, Singapore)
 
+Promoted to technical lead within my first year after consistent delivery across client projects.
+
 ### Cargo Shipment App
 
 `Rails, Postgres` — Shipment management with dashboard analytics and ERPNext sync.
