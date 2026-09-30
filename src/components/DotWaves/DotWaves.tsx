@@ -20,7 +20,7 @@ const DotWaves = () => {
     }
 
     const dpr = window.devicePixelRatio || 1;
-    const spacing = 26;
+    let spacing = 26;
     const radius = 130;
     const repulse = 0.55;
     const spring = 0.006;
@@ -60,6 +60,11 @@ const DotWaves = () => {
     const onPointerLeave = () => {
       pointerTargetX = null;
       pointerTargetY = null;
+    };
+
+    const onMoreDots = () => {
+      spacing = Math.max(10, spacing - 4);
+      buildGrid();
     };
 
     const resize = () => {
@@ -141,6 +146,7 @@ const DotWaves = () => {
     window.addEventListener('resize', resize);
     window.addEventListener('mousemove', onPointerMove);
     window.addEventListener('mouseleave', onPointerLeave);
+    window.addEventListener('more-dots', onMoreDots);
     draw();
 
     return () => {
@@ -148,6 +154,7 @@ const DotWaves = () => {
       window.removeEventListener('resize', resize);
       window.removeEventListener('mousemove', onPointerMove);
       window.removeEventListener('mouseleave', onPointerLeave);
+      window.removeEventListener('more-dots', onMoreDots);
     };
   }, []);
 
