@@ -67,7 +67,7 @@ const Hero = () => {
             );
 
             const classes =
-              'glass-subtle group flex items-center gap-3 rounded-xl px-4 py-3';
+              'glass-subtle group flex items-center gap-3 rounded-xl px-4 py-3.5';
 
             return to ? (
               <Link key={label} to={to} className={classes}>
