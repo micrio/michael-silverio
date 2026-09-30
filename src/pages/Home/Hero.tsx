@@ -44,7 +44,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div className="grid grid-cols-3 gap-4">
           {stats.map(({ startYear, value, label, to, suffix }, index) => {
             const content = (
               <>
@@ -68,9 +68,10 @@ const Hero = () => {
               </>
             );
 
-            const classes = `glass group flex min-h-[8.5rem] flex-col justify-between gap-5 rounded-2xl p-5 ${
-              index === 0 ? 'sm:col-span-2' : ''
-            }`;
+            const spanClass = ['sm:col-span-3', 'sm:col-span-2', 'sm:col-span-1'][
+              index
+            ];
+            const classes = `glass group col-span-3 flex min-h-[7rem] flex-col justify-between gap-4 rounded-2xl p-5 ${spanClass}`;
 
             return to ? (
               <Link key={label} to={to} className={classes}>
