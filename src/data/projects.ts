@@ -104,10 +104,6 @@ export const projects: IProject[] = [
         text: 'full-page settings dashboard with debounced PATCH persistence and transactional replacement of child collections.',
       },
       {
-        label: 'Auth',
-        text: 'Devise database auth with server-rendered sessions; authorization via Pundit (PortfolioPolicy).',
-      },
-      {
         label: 'Visitor Counting',
         text: 'per-portfolio visitor totals and per-day visitor_logs JSONB, incremented on real views (sample excluded).',
       },
