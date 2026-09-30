@@ -29,14 +29,14 @@ const Hero = () => {
   return (
     <section className="flex min-h-[calc(100svh-4.25rem)] items-center pb-10 pt-2 md:pt-4">
       <div className="grid w-full gap-10 lg:grid-cols-[68%_32%] lg:items-center lg:gap-16">
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-          <h1 className="text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-7xl">
+        <div className="flex flex-col items-start">
+          <h1 className="text-left text-4xl font-semibold tracking-tight text-slate-900 dark:text-white sm:text-5xl md:text-7xl">
             Michael Silverio
           </h1>
           <p className="mt-3 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-lg font-medium text-transparent dark:from-blue-400 dark:to-pink-400 md:text-xl">
             AI Engineer &middot; Full-Stack Developer
           </p>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+          <p className="mt-4 max-w-2xl text-left text-lg leading-relaxed text-slate-600 dark:text-slate-300">
             I build AI-powered products with a product-first mentality. Asking
             the right questions and understanding what users actually want makes
             it easier to build the right solutions — so I validate early,

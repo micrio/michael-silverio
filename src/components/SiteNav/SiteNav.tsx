@@ -28,7 +28,7 @@ const SiteNav = () => {
   };
 
   return (
-    <nav className="flex flex-wrap items-center justify-end gap-1">
+    <nav className="flex flex-wrap items-center justify-center gap-1 lg:justify-end">
       {links.map((link) => (
         <button
           key={link.id}
