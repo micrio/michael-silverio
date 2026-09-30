@@ -36,7 +36,7 @@ const ProductionApps = () => {
             </p>
             <Link
               to={`/shipped-features#${appSlug(app.name)}`}
-              className="group mt-4 inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/50 px-3 py-1.5 text-xs font-medium text-slate-700 transition-colors hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:text-white"
+              className="glass-subtle group mt-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium text-slate-700 hover:text-slate-950 dark:text-slate-200 dark:hover:text-white"
             >
               <ListChecks size={14} />
               {app.features.length} feature{app.features.length === 1 ? '' : 's'}
