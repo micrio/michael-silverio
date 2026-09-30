@@ -33,7 +33,7 @@ const Hero = () => {
           <h1 className="text-left text-5xl font-semibold tracking-tight text-slate-900 dark:text-white md:text-7xl">
             Michael Silverio
           </h1>
-          <p className="mt-3 text-lg font-medium text-slate-700 dark:text-slate-300 md:text-xl">
+          <p className="mt-3 bg-gradient-to-r from-blue-600 to-pink-500 bg-clip-text text-lg font-medium text-transparent dark:from-blue-400 dark:to-pink-400 md:text-xl">
             AI Engineer &middot; Full-Stack Developer
           </p>
           <p className="mt-4 max-w-2xl text-left text-lg leading-relaxed text-slate-600 dark:text-slate-300">
@@ -52,22 +52,22 @@ const Hero = () => {
                   startYear={startYear}
                   value={value}
                   suffix={suffix}
-                  className="text-3xl font-semibold text-slate-900 dark:text-white"
+                  className="text-2xl font-semibold text-slate-800 dark:text-slate-100"
                 />
-                <span className="flex-1 text-sm text-slate-600 dark:text-slate-400">
+                <span className="flex-1 text-xs text-slate-500 dark:text-slate-400">
                   {label}
                 </span>
                 {to && (
                   <ArrowRight
                     size={16}
-                    className="text-slate-500 transition-transform group-hover:translate-x-0.5 dark:text-slate-400"
+                    className="text-slate-400 transition-transform group-hover:translate-x-0.5 dark:text-slate-500"
                   />
                 )}
               </>
             );
 
             const classes =
-              'glass group flex items-center gap-4 rounded-2xl px-5 py-4';
+              'glass-subtle group flex items-center gap-4 rounded-2xl px-5 py-3.5';
 
             return to ? (
               <Link key={label} to={to} className={classes}>
