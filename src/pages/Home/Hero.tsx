@@ -52,7 +52,7 @@ const Hero = () => {
                   startYear={startYear}
                   value={value}
                   suffix={suffix}
-                  className="text-2xl font-semibold text-slate-800 dark:text-slate-100"
+                  className="text-xl font-semibold text-slate-800 dark:text-slate-100"
                 />
                 <span className="flex-1 text-xs text-slate-500 dark:text-slate-400">
                   {label}
@@ -67,7 +67,7 @@ const Hero = () => {
             );
 
             const classes =
-              'glass-subtle group flex items-center gap-4 rounded-2xl px-5 py-3.5';
+              'glass-subtle group flex items-center gap-3 rounded-xl px-4 py-3';
 
             return to ? (
               <Link key={label} to={to} className={classes}>
