@@ -9,9 +9,8 @@ interface IReveal {
 }
 
 /**
- * Slides its children in the first time they scroll into view.
- * No opacity fade: fading translucent glass lets the animated background
- * bleed through and looks trippy.
+ * Fades + slides its children in the first time they scroll into view, with a
+ * slow ease-out so the glass settles gently instead of snapping in.
  */
 const Reveal = ({ children, className, delay = 0 }: IReveal) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -42,8 +41,8 @@ const Reveal = ({ children, className, delay = 0 }: IReveal) => {
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={clsx(
-        'opacity-100 transition-all duration-700 ease-out',
-        visible ? 'translate-y-0' : 'translate-y-10',
+        'transition-all duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)]',
+        visible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0',
         className
       )}
     >
