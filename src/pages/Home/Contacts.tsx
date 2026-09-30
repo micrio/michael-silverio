@@ -18,7 +18,7 @@ const Contacts = () => {
   };
 
   return (
-    <section id="contact" className="py-16">
+    <section id="contact" className="scroll-mt-24 py-16">
       <h2 className="section-heading">Let&apos;s connect</h2>
       <p className="mt-4 max-w-2xl text-slate-600 dark:text-slate-400">
         Open to new opportunities and collaborations. Reach out any time.
