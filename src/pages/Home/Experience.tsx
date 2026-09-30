@@ -161,7 +161,9 @@ const Experience = () => {
               </p>
             )}
 
-            <RoleHighlights apps={role.apps} contributions={role.contributions} />
+            <div className={role.overview ? 'mt-6' : undefined}>
+              <RoleHighlights apps={role.apps} contributions={role.contributions} />
+            </div>
 
             {role.tech.length > 0 && (
               <div className="mt-6 flex flex-wrap gap-2">
