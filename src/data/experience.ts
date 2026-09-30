@@ -122,7 +122,7 @@ export const experienceRoles: IRole[] = [
     title: 'Software Engineer',
     period: 'Jul 2023 - Dec 2024',
     overview:
-      'Promoted to technical lead within my first year after consistent delivery across client projects.',
+      'Promoted to technical lead within my first year after consistent delivery across client projects. I mentor colleagues on our development tools and virtual desktop protocols, lead sync meetings to track progress and improve development efficiency, troubleshoot coding issues, and unblock the team by clearing obstacles so work keeps moving with less friction.',
     apps: [
       {
         name: 'Cargo Shipment App',
@@ -160,12 +160,6 @@ export const experienceRoles: IRole[] = [
           'Followed TDD to maintain 95%+ test coverage.',
         ],
       },
-    ],
-    contributions: [
-      'Mentor colleagues on our development tools and virtual desktop protocols.',
-      'Lead team sync meetings to track progress across assigned projects and find ways to improve development efficiency.',
-      'Troubleshoot coding issues and help unblock developers.',
-      'Act with intuition on project obstacles, finding ways to overcome them so other developers can continue and friction stays low.',
     ],
     tech: ['Rails', 'PostgreSQL', 'React', 'Zoho', 'Firebase', 'ETL'],
   },

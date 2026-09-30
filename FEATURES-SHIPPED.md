@@ -76,7 +76,7 @@ Act as the senior developer on the product, working directly with the client CTO
 
 ## Cognith (Jul 2023 - Dec 2024, Singapore)
 
-Promoted to technical lead within my first year after consistent delivery across client projects.
+Promoted to technical lead within my first year after consistent delivery across client projects. I mentor colleagues on our development tools and virtual desktop protocols, lead sync meetings to track progress and improve development efficiency, troubleshoot coding issues, and unblock the team by clearing obstacles so work keeps moving with less friction.
 
 ### Cargo Shipment App
 
