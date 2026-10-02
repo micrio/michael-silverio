@@ -31,6 +31,7 @@ const SKILL_ICONS: Record<string, string> = {
   Kubernetes: 'kubernetes',
   Grafana: 'grafana',
   'Zoho Integration': 'zoho',
+  WebRTC: 'webrtc',
 };
 
 const SkillIcon = ({ name }: { name: string }) => {
@@ -72,6 +73,7 @@ const skillGroups: ISkillGroup[] = [
       'RSpec',
       'Sidekiq',
       'Real-time (WebSockets / ActionCable)',
+  'WebRTC',
       'RubyLLM',
     ],
   },
